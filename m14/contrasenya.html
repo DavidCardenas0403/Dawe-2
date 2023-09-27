@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contrasenya.css">
-    <!-- <script src="contrasenya.js"></script> -->
+    <script src="contrasenya.js"></script>
     <title>Contrasenya David</title>
 </head>
 <body>
@@ -23,10 +23,12 @@
 
     <div class="input-contrasenya">
         <label for="contrasenya">Contrasenya:</label>
-        <input onchange="comprovarContrasenya()" type="password" id="contrasenya">
-        <button id="mostrar-ocultar">Mostrar</button>
+        <input onkeyup="comprovarContrasenya()" type="password" id="contrasenya">
+        <button onclick="mostrarOcultarContrasenya()" id="mostrar-ocultar">Mostrar</button>
     </div>
-    <p class="exito-error">Text éxito/error</p>
+    <ul id="mensajeError" class="exito-error">
+        <li>Escriu una contrasenya</li>
+    </ul>
 
 </body>
 </html>
