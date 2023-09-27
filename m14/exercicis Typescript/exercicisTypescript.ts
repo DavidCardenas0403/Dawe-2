@@ -56,3 +56,16 @@ const buscarElNombreMesGran = (array: number[]): number => {
 console.log("Exercici 6: " + buscarElNombreMesGran([5, 2, 4, 8, 7, 6, 12, 9]));
 
 //Exercici 7
+const validadorDePalindroms = (paraula: string): boolean => {
+    return paraula === paraula.split("").reverse().join("");
+};
+
+console.log("Exercici 7: " + validadorDePalindroms("sugus"));
+console.log("Exercici 7: " + validadorDePalindroms("hola"));
+
+//Exercici 8
+const generadorDeNombresAleatoris = (min: number, max: number): number => {
+    return Math.round(Math.random() * (max - min) + min);
+};
+
+console.log("Exercici 8: " + generadorDeNombresAleatoris(2, 6));

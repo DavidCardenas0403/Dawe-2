@@ -41,3 +41,14 @@ var buscarElNombreMesGran = function (array) {
     return Math.max.apply(Math, array);
 };
 console.log("Exercici 6: " + buscarElNombreMesGran([5, 2, 4, 8, 7, 6, 12, 9]));
+//Exercici 7
+var validadorDePalindroms = function (paraula) {
+    return paraula === paraula.split("").reverse().join("");
+};
+console.log("Exercici 7: " + validadorDePalindroms("sugus"));
+console.log("Exercici 7: " + validadorDePalindroms("hola"));
+//Exercici 8
+var generadorDeNombresAleatoris = function (min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+};
+console.log("Exercici 8: " + generadorDeNombresAleatoris(2, 6));
