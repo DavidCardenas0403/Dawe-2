@@ -36,3 +36,8 @@ var calcularFactorial = function (num) {
     }
 };
 console.log("Exercici 5: " + calcularFactorial(5));
+//Exercici 6
+var buscarElNombreMesGran = function (array) {
+    return Math.max.apply(Math, array);
+};
+console.log("Exercici 6: " + buscarElNombreMesGran([5, 2, 4, 8, 7, 6, 12, 9]));

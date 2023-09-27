@@ -47,3 +47,12 @@ const calcularFactorial = (num: number): number => {
 };
 
 console.log("Exercici 5: " + calcularFactorial(5));
+
+//Exercici 6
+const buscarElNombreMesGran = (array: number[]): number => {
+    return Math.max(...array);
+};
+
+console.log("Exercici 6: " + buscarElNombreMesGran([5, 2, 4, 8, 7, 6, 12, 9]));
+
+//Exercici 7
