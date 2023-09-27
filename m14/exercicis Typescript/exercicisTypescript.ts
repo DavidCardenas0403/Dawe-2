@@ -69,3 +69,17 @@ const generadorDeNombresAleatoris = (min: number, max: number): number => {
 };
 
 console.log("Exercici 8: " + generadorDeNombresAleatoris(2, 6));
+
+//Exercici 9
+const ordenarNombres = (array: number[]): number[] => {
+    return array.sort((a, b) => a - b);
+};
+
+console.log("Exercici 9: " + ordenarNombres([5, 4, 8, 7, 6, 2, 3, 1]));
+
+//Exercici 10
+const comptadorDeVocals = (paraula: string): number => {
+    return paraula.toLocaleLowerCase().match(/[aeiou]/gi).length;
+};
+
+console.log("Exercici 10: " + comptadorDeVocals("HolAa"));

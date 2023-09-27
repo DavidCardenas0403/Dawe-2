@@ -52,3 +52,13 @@ var generadorDeNombresAleatoris = function (min, max) {
     return Math.round(Math.random() * (max - min) + min);
 };
 console.log("Exercici 8: " + generadorDeNombresAleatoris(2, 6));
+//Exercici 9
+var ordenarNombres = function (array) {
+    return array.sort(function (a, b) { return a - b; });
+};
+console.log("Exercici 9: " + ordenarNombres([5, 4, 8, 7, 6, 2, 3, 1]));
+//Exercici 10
+var comptadorDeVocals = function (paraula) {
+    return paraula.toLocaleLowerCase().match(/[aeiou]/gi).length;
+};
+console.log("Exercici 10: " + comptadorDeVocals("HolAa"));
