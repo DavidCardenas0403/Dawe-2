@@ -23,6 +23,9 @@ const comprovarContrasenya = (): void => {
         mensaje.push("La contrasenya és vàlida");
     }
 
+    //Quitar posibles duplicados del array
+    mensaje = Array.from(new Set(mensaje));
+
     for (const msj of mensaje) {
         const li = document.createElement("li");
         li.textContent = msj;

@@ -17,6 +17,8 @@ var comprovarContrasenya = function () {
     if (mensaje.length === 0) {
         mensaje.push("La contrasenya és vàlida");
     }
+    //Quitar posibles duplicados del array
+    mensaje = Array.from(new Set(mensaje));
     for (var _i = 0, mensaje_1 = mensaje; _i < mensaje_1.length; _i++) {
         var msj = mensaje_1[_i];
         var li = document.createElement("li");
