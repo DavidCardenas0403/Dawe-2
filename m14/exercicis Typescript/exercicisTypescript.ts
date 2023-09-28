@@ -71,10 +71,11 @@ const generadorDeNombresAleatoris = (min: number, max: number): number => {
 console.log("Exercici 8: " + generadorDeNombresAleatoris(2, 6));
 
 //Exercici 9
-const ordenarNombres = (array: number[]): number[] => {
-    return array.sort((a, b) => a - b);
+const ordenarNombres = (array: number[], asc: boolean = true): number[] => {
+    return asc ? array.sort((a, b) => a - b) : array.sort((a, b) => b - a);
 };
 
+console.log("Exercici 9: " + ordenarNombres([5, 4, 8, 7, 6, 2, 3, 1], false));
 console.log("Exercici 9: " + ordenarNombres([5, 4, 8, 7, 6, 2, 3, 1]));
 
 //Exercici 10

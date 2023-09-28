@@ -53,9 +53,11 @@ var generadorDeNombresAleatoris = function (min, max) {
 };
 console.log("Exercici 8: " + generadorDeNombresAleatoris(2, 6));
 //Exercici 9
-var ordenarNombres = function (array) {
-    return array.sort(function (a, b) { return a - b; });
+var ordenarNombres = function (array, asc) {
+    if (asc === void 0) { asc = true; }
+    return asc ? array.sort(function (a, b) { return a - b; }) : array.sort(function (a, b) { return b - a; });
 };
+console.log("Exercici 9: " + ordenarNombres([5, 4, 8, 7, 6, 2, 3, 1], false));
 console.log("Exercici 9: " + ordenarNombres([5, 4, 8, 7, 6, 2, 3, 1]));
 //Exercici 10
 var comptadorDeVocals = function (paraula) {
