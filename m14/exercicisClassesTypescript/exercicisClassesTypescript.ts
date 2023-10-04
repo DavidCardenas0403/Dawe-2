@@ -126,3 +126,76 @@ Defineix una interfície anomenada Conductor amb una propietat nom i un mètode 
 d'implementar aquesta interfície.
 
 Finalment, crea instàncies de les classes Cotxe i Motocicleta, omple les seves dades i crida els mètodes per mostrar la informació dels vehicles i els noms dels conductors. */
+
+abstract class Vechicle {
+    constructor(
+        public marca: string,
+        public model: string,
+        public any: number
+    ) {}
+    abstract mostrarInfo(): void;
+}
+
+interface Conductor {
+    nom: string;
+
+    conduir(): void;
+}
+
+class Cotxe extends Vechicle implements Conductor {
+    constructor(
+        public nom: string,
+        public marca: string,
+        public model: string,
+        public any: number,
+        public nombrePortes: number,
+        public esAutomatic: boolean
+    ) {
+        super(marca, model, any);
+    }
+
+    mostrarInfo(): void {
+        console.log(
+            `Marca: ${this.marca}\nModel: ${this.model}\nAny: ${
+                this.any
+            }\nNº portes: ${this.nombrePortes}\nAutomàtic: ${
+                this.esAutomatic ? "Sí" : "No"
+            }`
+        );
+    }
+
+    conduir(): void {
+        console.log(`${this.nom} està conduint`);
+    }
+}
+
+class Moto extends Vechicle implements Conductor {
+    constructor(
+        public nom: string,
+        public marca: string,
+        public model: string,
+        public any: number,
+        public cilindrada: number
+    ) {
+        super(marca, model, any);
+    }
+
+    mostrarInfo(): void {
+        console.log(
+            `Marca: ${this.marca}\nModel: ${this.model}\nAny: ${this.any}\nCilindrada: ${this.cilindrada}`
+        );
+    }
+
+    conduir(): void {
+        console.log(`${this.nom} està conduint`);
+    }
+}
+
+const tesla = new Cotxe("Elon Musk", "Tesla", "Model S", 2018, 4, true);
+const z900 = new Moto("Marc Màrquez", "Kawasaki", "Z900", 2016, 900);
+
+tesla.mostrarInfo();
+tesla.conduir();
+
+z900.mostrarInfo();
+z900.conduir();
