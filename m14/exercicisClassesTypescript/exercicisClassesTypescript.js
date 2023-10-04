@@ -48,5 +48,52 @@ var teclat = new Producte(1, "Teclat", 35, 5);
 var ratoli = new Producte(2, "Ratolí", 15, 3);
 teclat.augmentarQuantitat(2);
 teclat.calcularPreuTotal();
-ratoli.disminuirQuantitat(4);
+ratoli.disminuirQuantitat(1);
 ratoli.calcularPreuTotal();
+/* Exercici 3: Compte bancari
+Crea una classe CompteBancari amb les següents propietats: titular (string), saldo (number) i un número d'identificació
+d'únic compte bancari (string o number). Afegeix mètodes per ingressar diners al compte, retirar diners del compte i mostrar el saldo actual.
+ També pots afegir una propietat per registrar les transaccions realitzades (ingressos i retirades).
+  Crea instàncies de la classe CompteBancari i utilitza els mètodes per gestionar els comptes i les transaccions. */
+var CompteBancari = /** @class */ (function () {
+    function CompteBancari(titular, saldo, id, registre) {
+        if (id === void 0) { id = Date.now(); }
+        if (registre === void 0) { registre = []; }
+        this.titular = titular;
+        this.saldo = saldo;
+        this.id = id;
+        this.registre = registre;
+    }
+    CompteBancari.prototype.ingressar = function (diners) {
+        this.saldo += diners;
+        this.registre.push("+ ".concat(diners, "\u20AC"));
+    };
+    CompteBancari.prototype.retirar = function (diners) {
+        if (diners <= this.saldo) {
+            this.saldo -= diners;
+            this.registre.push("- ".concat(diners, "\u20AC"));
+        }
+        else {
+            console.log("No puedes retirar más dinero del que tienes en la cuenta");
+        }
+    };
+    CompteBancari.prototype.mostrarSaldo = function () {
+        console.log("El saldo total es de ".concat(this.saldo, "\u20AC"));
+    };
+    CompteBancari.prototype.mostrarRegistre = function () {
+        console.log(this.registre);
+    };
+    return CompteBancari;
+}());
+var compte1 = new CompteBancari("David", 500);
+var compte2 = new CompteBancari("Sergio", 1000);
+compte1.ingressar(200);
+compte1.retirar(50);
+compte1.mostrarSaldo();
+compte1.mostrarRegistre();
+compte2.retirar(1200); //No deixa
+compte2.retirar(600);
+compte2.retirar(120);
+compte2.ingressar(200.5);
+compte2.mostrarSaldo();
+compte2.mostrarRegistre();

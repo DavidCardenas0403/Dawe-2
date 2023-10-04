@@ -55,7 +55,7 @@ const ratoli = new Producte(2, "Ratolí", 15, 3);
 teclat.augmentarQuantitat(2);
 teclat.calcularPreuTotal();
 
-ratoli.disminuirQuantitat(4);
+ratoli.disminuirQuantitat(1);
 ratoli.calcularPreuTotal();
 
 /* Exercici 3: Compte bancari
@@ -68,8 +68,8 @@ class CompteBancari {
     constructor(
         public titular: string,
         public saldo: number,
-        public id: number,
-        public registre: string[]
+        public id: number = Date.now(),
+        public registre: string[] = []
     ) {}
 
     ingressar(diners: number): void {
@@ -81,13 +81,48 @@ class CompteBancari {
         if (diners <= this.saldo) {
             this.saldo -= diners;
             this.registre.push(`- ${diners}€`);
-        } else
+        } else {
             console.log(
                 "No puedes retirar más dinero del que tienes en la cuenta"
             );
+        }
     }
 
     mostrarSaldo(): void {
         console.log(`El saldo total es de ${this.saldo}€`);
     }
+
+    mostrarRegistre(): void {
+        console.log(this.registre);
+    }
 }
+
+const compte1 = new CompteBancari("David", 500);
+const compte2 = new CompteBancari("Sergio", 1000);
+
+compte1.ingressar(200);
+compte1.retirar(50);
+compte1.mostrarSaldo();
+compte1.mostrarRegistre();
+
+compte2.retirar(1200); //No deixa
+compte2.retirar(600);
+compte2.retirar(120);
+compte2.ingressar(200.5);
+compte2.mostrarSaldo();
+compte2.mostrarRegistre();
+
+/* Exercici 4: Vehicles i Cotxes
+
+Crea una jerarquia de classes relacionades amb vehicles. Tindràs una classe abstracta Vehicle que tindrà les propietats comunes a tots els vehicles, com ara marca, model i any.
+ Aquesta classe tindrà també un mètode abstracte mostrarInfo() que serà implementat per les subclasses concretes.
+
+A continuació, crea dues classes concretes que heretin de Vehicle: Cotxe i Motocicleta. Cada una d'aquestes classes tindrà les seves pròpies propietats i mètodes específics:
+
+Cotxe tindrà les propietats addicionals nombrePortes i esAutomatic.
+Motocicleta tindrà la propietat addicional cilindrada.
+
+Defineix una interfície anomenada Conductor amb una propietat nom i un mètode conduir(). Les dues classes concretes (Cotxe i Motocicleta) hauran de ser capaces 
+d'implementar aquesta interfície.
+
+Finalment, crea instàncies de les classes Cotxe i Motocicleta, omple les seves dades i crida els mètodes per mostrar la informació dels vehicles i els noms dels conductors. */
