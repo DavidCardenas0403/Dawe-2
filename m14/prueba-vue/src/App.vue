@@ -1,7 +1,21 @@
 <script setup lang="ts">
+import { ref, type Ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
 const nom: string = "Vue en marxa"
-const styleColors:string = "color:blue"
+const styleColors: string = "color:blue"
+let counter: Ref<number> = ref(0)
+
+const incrementCounter = (): void => {
+  counter.value++
+}
+
+const decrementCounter = (): void => {
+  counter.value--
+}
+
+const resetCounter = (): void => {
+  counter.value = 0
+}
 </script>
 
 <template>
@@ -15,9 +29,30 @@ const styleColors:string = "color:blue"
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+
+  <button @click.right.prevent="() => console.log('click derecho')" @click.left="() => console.log('click izquierdo')"
+    @click.middle="() => console.log('click ratón')">Botón</button>
+
+  <h3 :class="`${counter < 0 ? 'red' : counter == 0 ? 'black' : 'green'}`">{{ counter }}</h3>
+
+  <button @click="decrementCounter" class="btn btn-danger">-</button>
+  <button @click="incrementCounter" class="btn btn-success">+</button>
+  <button @click="resetCounter">Reset</button>
 </template>
 
 <style scoped>
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
+
+.green {
+  color: green;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -33,3 +68,38 @@ const styleColors:string = "color:blue"
   filter: drop-shadow(0 0 2em #42b883aa);
 }
 </style>
+
+<!-- <template>
+  <div>
+      <h2 :style="`${counter < 0 ? 'color: red' : counter == 0 ? 'color: white' : 'color: green'}`">{{ counter }}</h2>
+      <button @click="increment">+</button>
+      <button @click="decrement">-</button>
+      <button @click="reset">RESET</button>
+
+      <button :disabled="favoritos.includes(counter)" @click="addFavs">ADD</button>
+
+      <ul>
+          <li :key="fav" v-for="fav in favoritos">{{ fav }}</li>
+      </ul>
+  </div>
+</template>
+
+<script lang="ts" setup>
+  import { ref, type Ref } from 'vue';
+
+  let counter: Ref<number> = ref(0);
+  let favoritos: Ref<Array<number>> = ref([])
+
+  const increment = () => {
+      counter.value++;
+  }
+  const decrement = () => {
+      counter.value--;
+  }
+  const reset = () => {
+      counter.value = 0
+  }
+  const addFavs = () => {
+      favoritos.value.push(counter.value)
+  }
+</script> -->
