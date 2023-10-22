@@ -11,7 +11,7 @@ const router = createRouter({
             component: LlistaPersonatges,
         },
         {
-            path: "/detall",
+            path: "/detall/:id",
             name: "detall",
             // route level code-splitting
             // this generates a separate chunk (About.[hash].js) for this route

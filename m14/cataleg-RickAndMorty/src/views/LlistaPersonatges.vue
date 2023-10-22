@@ -3,9 +3,10 @@ import { ref, type Ref, watch } from "vue";
 import Personatge from "@/components/Personatge.vue";
 import BarraCerca from "@/components/BarraCerca.vue";
 const personatges: Ref<Array<typeof Personatge>> = ref([]);
-const url: Ref<string> = ref("https://rickandmortyapi.com/api/character");
+const page: Ref<number> = ref(1);
+const url: Ref<string> = ref(`https://rickandmortyapi.com/api/character`);
 
-const fetchData = async () => {
+const fetchData = async (): Promise<void> => {
     const res = await fetch(url.value);
     const json = await res.json();
     personatges.value = json.results;
@@ -17,6 +18,11 @@ const filtrarUrl = (personatge: string): void => {
 };
 
 fetchData();
+watch(
+    page,
+    () =>
+        (url.value = `https://rickandmortyapi.com/api/character/?page=${page.value}`)
+);
 watch(url, fetchData);
 </script>
 
@@ -24,6 +30,12 @@ watch(url, fetchData);
     <main class="contenedor">
         <h1 class="titulo">Personatges Rick and Morty</h1>
         <BarraCerca @search="filtrarUrl" />
+        <h3 class="page">Page {{ page }}</h3>
+        <div class="botones">
+            <button v-if="page > 1" @click="page--">Previous page</button>
+            <button v-if="page < 42" @click="page++">Next page</button>
+        </div>
+
         <section class="personatges">
             <Personatge
                 v-for="(personatge, index) in personatges"
@@ -39,6 +51,16 @@ watch(url, fetchData);
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.page {
+    margin-top: 1rem;
+}
+
+.botones {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.5rem;
 }
 
 .titulo {
