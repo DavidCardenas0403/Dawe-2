@@ -8,7 +8,7 @@ import { RouterLink, RouterView } from "vue-router";
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/contact">Contact</RouterLink>
-      <RouterLink to="/list">Product List</RouterLink>
+      <RouterLink to="/llista">Product List</RouterLink>
     </nav>
   </header>
 
@@ -17,8 +17,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 <style scoped>
 header {
-  width: 100vw;
-  height: 100px;
+  width: 100%;
   display: block;
 }
 nav {

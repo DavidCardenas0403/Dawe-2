@@ -1,0 +1,142 @@
+[
+    {
+      "id": "1",
+      "name": "Apple MacBook Pro",
+      "price": 1999,
+      "img": "https://tienda.bananacomputer.com/cms/uploads/webp/B2576B53-FF18-40D4-AB35-8F1C474397D7-750-rd2mvs.webp",
+      "description": "Powerful and sleek laptop for professionals"
+    },
+    {
+      "id": "2",
+      "name": "Samsung Galaxy S20",
+      "price": 999,
+      "img": "https://media2.gsm55.com/media/device/4559/4559.png",
+      "description": "Flagship smartphone with stunning display and camera"
+    },
+    {
+      "id": "3",
+      "name": "Apple Watch Series 5",
+      "price": 399,
+      "img": "https://movistar.es//estaticos/imagenes/terminales-moviles/ficha-445/apple-watch-serie-5-44m-space-gray-case-black-sport-band-01.png",
+      "description": "Smartwatch with advanced health and fitness features"
+    },
+    {
+      "id": "4",
+      "name": "LG OLED55C9PUA",
+      "price": 1499,
+      "img": "https://crdms.images.consumerreports.org/prod/products/cr/models/398571-tvs-lg-oled55c9pua-10005217.png",
+      "description": "55-inch OLED TV with exceptional picture quality"
+    },
+    {
+      "id": "5",
+      "name": "Logitech MX Master 3",
+      "price": 99,
+      "img": "https://resource.logitech.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-mouse-top-view-graphite.png?v=1",
+      "description": "Wireless mouse with advanced features for productivity"
+    },
+    {
+      "id": "6",
+      "name": "Dell XPS 13",
+      "price": 1199,
+      "img": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9315/media-gallery/notebook-xps-9315-nt-blue-gallery-3.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=575&qlt=100,1&resMode=sharp2&size=575,402&chrss=full",
+      "description": "Compact and powerful laptop for everyday use"
+    },
+    {
+      "id": "7",
+      "name": "Google Pixel 4",
+      "price": 799,
+      "img": "https://static-geektopia.com/storage/t/i/683/68388/pixel_4.webp",
+      "description": "Smartphone with excellent camera and pure Android experience"
+    },
+    {
+      "id": "8",
+      "name": "Samsung QN65Q90RAFXZA",
+      "price": 2499,
+      "img": "https://images.samsung.com/is/image/samsung/ca-qled-q90r-qn65q90rafxzc-frontblack-149708946?$624_624_PNG$",
+      "description": "65-inch QLED TV with vibrant colors and deep blacks"
+    },
+    {
+      "id": "9",
+      "name": "Sony WH-1000XM4",
+      "price": 349,
+      "img": "https://www.sony.es/image/5d02da5df552836db894cead8a68f5f3?fmt=png-alpha&wid=660",
+      "description": "Wireless noise-canceling headphones with exceptional sound quality"
+    },
+    {
+      "id": "10",
+      "name": "Lenovo ThinkPad X1 Carbon",
+      "price": 1499,
+      "img": "https://p2-ofp.static.pub/fes/cms/2022/08/12/c0930tuc1yytgw3yt8m94fz91kunue061389.png",
+      "description": "Durable and lightweight business laptop"
+    },
+    {
+      "id": "11",
+      "name": "OnePlus 8 Pro",
+      "price": 899,
+      "img": "https://res-2.cloudinary.com/grover/image/upload/v1587390720/swey2c5blqjoj0rhzfwp.png",
+      "description": "Flagship smartphone with 120Hz display and fast charging"
+    },
+    {
+      "id": "12",
+      "name": "Apple AirPods Pro",
+      "price": 249,
+      "img": "https://tienda.bananacomputer.com/cms/uploads/webp/812F91CA-C545-4ECA-BE5E-A9A4A25E1FB3-750-rhuwvr.webp",
+      "description": "Wireless earbuds with active noise cancellation"
+    },
+    {
+      "id": "13",
+      "name": "Sony A7 III",
+      "price": 1999,
+      "img": "https://res-5.cloudinary.com/grover/image/upload/v1662653019/on97dacbxtg7te9vzbhx.png",
+      "description": "Mirrorless camera with excellent low-light performance"
+    },
+    {
+      "id": "14",
+      "name": "Samsung Galaxy Tab S7+",
+      "price": 849,
+      "img": "https://images.samsung.com/is/image/samsung/latin-galaxy-tab-s7-plus-wifi-t970-sm-t970nzklgto-frontmysticblack-301275500?$650_519_PNG$",
+      "description": "High-end Android tablet with a large display"
+    },
+    {
+      "id": "15",
+      "name": "Bose QuietComfort 35 II",
+      "price": 299,
+      "img": "https://www.phase-store.com/wp-content/uploads/2021/01/cq5dam.web_.600.600-4.png",
+      "description": "Wireless noise-canceling headphones with balanced audio"
+    },
+    {
+      "id": "16",
+      "name": "HP Spectre x360",
+      "price": 1299,
+      "img": "https://d1pc5hp1w29h96.cloudfront.net/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/6/B/6B9Q1LA-1_T1679646705.png",
+      "description": "Convertible laptop with a stylish design"
+    },
+    {
+      "id": "17",
+      "name": "OnePlus Nord",
+      "price": 499,
+      "img": "https://www.kibotek.com/wp-content/uploads/2022/06/kiboTEK_oneplus_nord_2t_015.png",
+      "description": "Mid-range smartphone with 5G capabilities"
+    },
+    {
+      "id": "18",
+      "name": "LG 27UK850-W",
+      "price": 499,
+      "img": "https://res-1.cloudinary.com/grover/image/upload/v1661469214/nnubkuwwaap5riv2vc4c.png",
+      "description": "27-inch 4K monitor with HDR support"
+    },
+    {
+      "id": "19",
+      "name": "Sony WH-1000XM3",
+      "price": 299,
+      "img": "https://www.sony.es/image/5d02da5df552836db894cead8a68f5f3?fmt=png-alpha&wid=660",
+      "description": "Wireless noise-canceling headphones with long battery life"
+    },
+    {
+      "id": "20",
+      "name": "Microsoft Surface Pro 7",
+      "price": 899,
+      "img": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/MSFT-RWGaM8-Surface-Pro-7-in-Laptop-Mode?fmt=png-alpha",
+      "description": "Versatile 2-in-1 device for productivity on the go"
+    }
+  ]

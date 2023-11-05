@@ -3,6 +3,7 @@
 #app {
   margin: 0 auto;
   font-weight: normal;
+  background-color: var(--color-background);
 }
 
 a,
@@ -14,6 +15,10 @@ a,
 
 header {
   margin-bottom: 30px;
+}
+
+nav a {
+  font-size: 15px;
 }
 
 @media (hover: hover) {
