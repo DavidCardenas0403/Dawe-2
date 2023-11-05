@@ -4,6 +4,8 @@ import About from "../views/About.vue";
 import Contact from "@/views/Contact.vue";
 import ProductList from "../views/ProductList.vue";
 import ProductDetail from "../views/ProductDetail.vue";
+import Search from "@/views/Search.vue";
+import Resultat from "../views/Resultat.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +34,16 @@ const router = createRouter({
       path: "/producte/:id",
       name: "producte",
       component: ProductDetail,
+    },
+    {
+      path: "/search",
+      name: "search",
+      component: Search,
+    },
+    {
+      path: "/resultat",
+      name: "resultat",
+      component: Resultat,
     },
   ],
 });
