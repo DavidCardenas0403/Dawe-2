@@ -1,13 +1,25 @@
 <script setup lang="ts">
+import type Entry from "@/types/Entry";
 import { ref, type Ref } from "vue";
 const postText: Ref<string> = ref("");
-const handleSubmit = (e: Event): void => {
-  e.preventDefault();
-};
+defineEmits<{
+  "@create": [post: Entry];
+}>();
 </script>
 
 <template>
-  <form class="form" @submit="(e) => handleSubmit(e)" novalidate>
+  <form
+    class="form"
+    @submit.prevent="
+      () =>
+        $emit('@create', {
+          id: 1,
+          text: postText,
+          emoji: 'happy',
+          date: new Date(),
+        })
+    "
+  >
     <textarea
       class="textarea"
       v-model="postText"

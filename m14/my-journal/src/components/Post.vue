@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type Entry from "@/types/Entry";
+
 defineProps<{
-  info: { emoji: string; text: string; date: Date };
+  info: Entry;
 }>();
 </script>
 
