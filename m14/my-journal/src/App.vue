@@ -43,14 +43,28 @@ const manipularPost = (entradaPost: Entry): void => {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .logo {
-  width: 50px;
+  width: 65px;
 }
 
 .title {
   font-size: 2.2rem;
   font-weight: 600;
+}
+
+.posts {
+  width: 30%;
+  margin-top: 10px;
+}
+
+.posts > ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 </style>

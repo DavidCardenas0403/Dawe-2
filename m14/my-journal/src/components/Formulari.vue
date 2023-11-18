@@ -42,8 +42,10 @@ defineEmits<{
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background-color: rgb(207, 207, 207);
+  background-color: rgb(228, 228, 228);
   border-radius: 5px;
+  gap: 5px;
+  width: 30%;
 }
 .textarea {
   resize: none;
@@ -51,9 +53,15 @@ defineEmits<{
   padding: 10px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1rem;
+  border: 0;
+}
+
+.textarea:focus {
+  outline: none;
 }
 .characters {
   color: black;
+  cursor: default;
 }
 
 .button {
@@ -64,5 +72,10 @@ defineEmits<{
   padding: 7px 12px;
   background-color: rgb(4, 121, 76);
   color: rgba(255, 255, 255, 0.87);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(4, 107, 68);
 }
 </style>
