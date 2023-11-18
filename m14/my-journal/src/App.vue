@@ -13,11 +13,12 @@ const manipularPost = (entradaPost: Entry): void => {
 </script>
 
 <template>
-  <header class="header">
-    <img class="logo" :src="logo" alt="Logo 'My Journal'" />
-    <h1 class="title">My Journal</h1>
-  </header>
-  <main>
+  <main class="main">
+    <header class="header">
+      <img class="logo" :src="logo" alt="Logo 'My Journal'" />
+      <h1 class="title">My Journal</h1>
+    </header>
+
     <Formulari @@create="manipularPost" />
     <section class="posts">
       <ul>
@@ -30,13 +31,26 @@ const manipularPost = (entradaPost: Entry): void => {
 </template>
 
 <style scoped>
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 .header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
 .logo {
   width: 50px;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 600;
 }
 </style>
