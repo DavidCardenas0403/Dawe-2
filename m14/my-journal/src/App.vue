@@ -8,7 +8,7 @@ import type Entry from "./types/Entry";
 const posts: Entry[] = reactive([]);
 
 const manipularPost = (entradaPost: Entry): void => {
-  posts.push(entradaPost);
+  posts.unshift(entradaPost);
 };
 </script>
 

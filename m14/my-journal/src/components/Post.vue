@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type Entry from "@/types/Entry";
 import happy from "../assets/icons/happy.svg";
+import type User from "@/types/User";
+
+const user: User = {
+  id: 1,
+  username: "David Cárdenas",
+};
 
 defineProps<{
   info: Entry;
@@ -31,7 +37,10 @@ const formatDate = (date: Date): string => {
         {{ info.text }}
       </p>
     </div>
-    <p class="date">{{ formatDate(info.date) }}</p>
+    <p class="date">
+      {{ formatDate(info.date) }} |
+      <span class="username">{{ user.username }}</span>
+    </p>
   </article>
 </template>
 
@@ -47,7 +56,8 @@ const formatDate = (date: Date): string => {
 }
 .emoji_description {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
 }
 
 .emoji {
@@ -61,5 +71,9 @@ const formatDate = (date: Date): string => {
 
 .date {
   align-self: flex-end;
+  color: rgb(4, 121, 76);
+}
+.username {
+  color: rgb(0, 170, 105);
 }
 </style>
