@@ -22,7 +22,7 @@ const manipularPost = (entradaPost: Entry): void => {
     <Formulari @@create="manipularPost" />
     <section class="posts">
       <ul>
-        <li v-for="(post, index) in posts" :key="index">
+        <li v-for="post in posts" :key="post.id">
           <Post :info="post" />
         </li>
       </ul>
