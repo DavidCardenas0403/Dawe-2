@@ -1,7 +1,7 @@
 import type { Emoji } from "./Emoji";
 
 export default interface Entry {
-  id: number;
+  id: string;
   text: string;
   emoji: Emoji;
   date: Date;

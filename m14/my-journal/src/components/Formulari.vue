@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import Emojis from "./Emojis.vue";
 import type Entry from "@/types/Entry";
 import { ref, type Ref } from "vue";
+import { v4 as uuidv4 } from "uuid";
+import type { Emoji } from "@/types/Emoji";
 const postText: Ref<string> = ref("");
+const emoji: Ref<Emoji> = ref("happy");
 defineEmits<{
   "@create": [post: Entry];
 }>();
@@ -13,9 +17,9 @@ defineEmits<{
     @submit.prevent="
       () =>
         $emit('@create', {
-          id: 1,
+          id: uuidv4(),
           text: postText,
-          emoji: 'happy',
+          emoji: emoji,
           date: new Date(),
         })
     "
@@ -31,7 +35,7 @@ defineEmits<{
       maxlength="280"
     >
     </textarea>
-    <div class="emojis"></div>
+    <Emojis @@select-emoji="(emojiSelected:Emoji) => (emoji = emojiSelected)" />
     <p class="characters">{{ `${postText.length} / 280` }}</p>
     <button class="button" type="submit">Remember</button>
   </form>

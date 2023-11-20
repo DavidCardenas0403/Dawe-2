@@ -1,1 +1,1 @@
-export type Emoji = "happy" | "sad" | "surprised";
+export type Emoji = "happy" | "sad" | "surprised" | "angry" | "neutral";
