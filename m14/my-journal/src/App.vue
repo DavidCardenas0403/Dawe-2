@@ -32,7 +32,7 @@ const manipularPost = (entradaPost: Entry): void => {
 
 <style scoped>
 .main {
-  margin-top: 2rem;
+  margin: 2rem 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -58,7 +58,10 @@ const manipularPost = (entradaPost: Entry): void => {
 
 .posts {
   width: 30%;
+  max-height: 50vh;
   margin-top: 10px;
+  overflow-y: auto;
+  border-radius: 5px;
 }
 
 .posts > ul {

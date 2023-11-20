@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type Entry from "@/types/Entry";
+import happy from "../assets/icons/happy.svg";
 
 defineProps<{
   info: Entry;
@@ -23,10 +24,12 @@ const formatDate = (date: Date): string => {
     <div class="emoji_description">
       <img
         class="emoji"
-        :src="`../assets/icons/${info.emoji}.svg`"
+        :src="`/src/assets/icons/${info.emoji}.svg`"
         :alt="`Emoji ${info.emoji}`"
       />
-      <p>{{ info.text }}</p>
+      <p class="text">
+        {{ info.text }}
+      </p>
     </div>
     <p class="date">{{ formatDate(info.date) }}</p>
   </article>
@@ -48,7 +51,12 @@ const formatDate = (date: Date): string => {
 }
 
 .emoji {
-  width: 70px;
+  width: 60px;
+}
+
+.text {
+  width: 80%;
+  word-break: break-all;
 }
 
 .date {
