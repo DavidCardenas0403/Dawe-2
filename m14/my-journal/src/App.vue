@@ -58,7 +58,7 @@ const manipularPost = (entradaPost: Entry): void => {
 
 .posts {
   width: 30%;
-  max-height: 50vh;
+  max-height: 45vh;
   margin-top: 10px;
   overflow-y: auto;
   border-radius: 5px;
