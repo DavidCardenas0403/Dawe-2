@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&family=Montserrat:wght@100;300;500&display=swap");
+body {
+  font-family: "Montserrat";
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(250, 250, 250);
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 20vh;
+  background: linear-gradient(
+    rgb(218, 244, 255),
+    10%,
+    rgb(119, 214, 255),
+    90%,
+    rgb(218, 244, 255)
+  );
+}
+
+header > h1,
+header > p {
+  margin: 0;
+}
+
+div {
+  background-color: rgb(218, 244, 255);
+  width: 100%;
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 75px;
+  padding-bottom: 5vh;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 3rem;
+  height: 400px;
+  margin: 20px;
+  width: 35%;
+  background: rgb(146, 215, 233);
+  -webkit-box-shadow: 10px 10px 7px -6px rgba(133, 133, 133, 0.86);
+  -moz-box-shadow: 10px 10px 7px -6px rgba(133, 133, 133, 0.86);
+  box-shadow: 10px 10px 7px -6px rgba(133, 133, 133, 0.86);
+  border-radius: 1rem;
+}
+
+.info-relevante {
+  text-align: center;
+  overflow-y: auto;
+}
+
+.info-relevante > img {
+  width: 75px;
+  margin-bottom: 20px;
+}
+
+.info-relevante > article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+  gap: 5px;
+}
+
+details > p {
+  margin: 5px;
+}
+
+.habilidades > ol {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.15rem;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+  background-color: rgb(171, 219, 240);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
