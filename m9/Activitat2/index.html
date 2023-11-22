@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .tabledefault {
+        background-color: #87cefd;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Proyecto HTML</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./estilos.css" />
+    <!--     <style>
+      .tabledefault {
+        background-color: #87cefd;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="contenedor">
+      <h1>Aquest és un encapçalament</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptatem
+        blanditiis officiis, amet cupiditate eum recusandae architecto.
+      </p>
+      <p>Primer paràgraf</p>
+      <p><span>Segon paràgraf</span></p>
+      <p>
+        <span><b>Hola tercer paràgraf</b></span>
+      </p>
+      <button>Veure article</button>
+    </div>
+    <div class="contenedor2">
+      <table class="tabledefault">
+        <tr>
+          <th>Hoy</th>
+          <th>Mañana</th>
+          <th>Miércoles</th>
+        </tr>
+        <tr>
+          <td>Solejat</td>
+          <td>Majorment solejat</td>
+          <td>Parcialment nuvós</td>
+        </tr>
+        <tr>
+          <td>19°C</td>
+          <td>17°C</td>
+          <td>12°C</td>
+        </tr>
+        <tr>
+          <td>E 13 km/h</td>
+          <td>E 11 km/h</td>
+          <td>S 16 km/h</td>
+        </tr>
+      </table>
+      <div>
+        <p><strong>Per mes informació, pot consultar-ho en: </strong></p>
+        <p><a href="https://www.eltiempo.com">Eltiempo</a></p>
+        <p>
+          <span><a href="https://www.meteo.cat">MeteoCat 2</a></span>
+        </p>
+        <p>
+          <span
+            ><strong
+              ><a
+                href="https://www.accuweather.com/es/es/barcelona/307297/weather-forecast/307297"
+                >Accuweather</a
+              ></strong
+            ></span
+          >
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- EXERCICIS
+
+Exercici 1: 
+
+1- Modifica el head per que agafi la guia d’estils
+
+Solución en la línea 12 del HTML: 
+<link rel="stylesheet" href="./estilos.css" />
+
+2- Modifica el document per que es vegin bé tots els caràcters
+
+Canvio el charset a "UTF-8" i poso els elements al centre amb text-align: center; (al selector *) i margin: 0 auto; (.tabledefault)
+
+
+
+
+Exercici 1.2: 
+
+1- Modifica en el css el color del background, copia aquest backgroud, posa’l abaix i canvia el color
+
+Al body, he afegit un background vermell, i gràcies a la cascada de css, només fa cas a l'última propietat
+
+
+2-  Afegir al final de la capçalera del document HTML que la taula tingui un color de background diferent.
+canvia taula per .tabledefault. Qué ha canviat?
+posem-ho en un <style> just després de la apertura de <head>. Surt el mateix?
+
+Solució a la línea 14 del HTML:
+<style>table {background-color: #87cefd;}</style>
+
+Aquí encara no canvia el color, ja que l'arxiu styles.css té una especificitat major (.tabledefault)
+
+Ara canvio "table" per ".tabledefault" a la línea 14:
+<style>.tabledefault {background-color: #87cefd;}</style>
+
+Ara sí que canvia el color, ja que l'arxiu css y l'html tenen la mateixa especificitat, però l'arxiu html "guanya" gràcies a la cascada.
+
+Ara he comentat els estils de la línea 14 del html i he posat els mateixos a la línea 4.
+Fent això, el nou color desapareix i torna el color groc original, ja que l'arxiu styles.css es crida després del tag "style", i per tant, l'arxiu styles.css guanya gràcies a la cascada.
+
+
+
+
+
+
+Exercici 2: 
+
+1- Canviar en el full d’estils el text-decoration per que H1 tingui subratllat
+
+Afegeixo text-decoration: underline; al selector ".contenedor h1" de l'arxiu styles.css (línia 31)
+
+2-  Afegir un parell de propietats bàsiques del llistat que modifica les propietats en les taules
+
+He aplicat la propietat "margin: 0 auto;" al selector .tabledefault (línea 56) perquè estigui al centre de la pàgina.
+També he afegit la propietat "border-radius: 10px;" al selector .tabledefault (línia 55) perquè la taula tingui les vores arrodonides.
+
+
+
+
+
+
+
+Exercici 2.1:
+
+1- Modifica el color del background de la propietat *. És el mateix background?
+Ha canviat el backgroud de la pàgina.
+
+S'ha canviat el background color de gairabé tots els elements que hi ha al html.
+No s'ha canviat el background de tots els elements perquè després també modifico el background d'altres elements,
+llavors, per la cascada de css, no es canvien tots els elements. Si el selector * estigués a sota de tots els altres selectors, llavors sí que es canviarien tots els background color.
+
+
+
+
+
+
+
+
+Exercici 2.2: 
+
+La diferència entre "tr, th" i "tr th", és que el primer canvia a tots els "tr" i tots els "th".
+El segon canvia a tots els "th" que estan a dins de un "tr", i els "tr" no es modifiquen.
+
+
+
+
+
+
+
+Exercici 2.3: 
+
+1-  Afegim al final del document :
+p a { color: red; }
+i provem després amb:
+p * a { color: red; }
+
+El selector "p a" canvia a tots els tags "a" que estiguin a dins d'un tag "p".
+
+I el selector "p * a" canvia a tots els tag "a" que estiguin a dins d'un tag "p", però que no siguin fills directes, sino que siguin néts, besnéts...
+Si comentem el primer selector ("p a") i deixem només el segon selector ("p * a"), "Eltiempo" no canvia de color, però "MeteoCat2" i "Accuweather" sí que canvien.
+
+
+
+
+
+
+
+
+
+Exercici 2.4:
+
+1-  Afegim al final del document :
+p ~ p { color: orange; }
+
+Esta afectant als enllaços. Per que?
+
+Només està afectant als tag "p" que estan a les línees 31, 32 i 33 del html. Ja que aquest selector només modifica als 
+tag "p" que són germans (estan al mateix nivell) d'un altre tag "p" (sense comptar al primer).
+
+No està afectant als enllaços perquè aquest selector està canviant el color del tag "p", però dins del tag "p" hi ha un tag "a", que també té una propietat per canviar-li el color (exercici anterior).
+Llavors, per la especificitat del css, predomina el color del tag "a" (vermell).
+
+
+
+
+
+
+
+
+
+
+Exercici 3:
+
+1-  Passar el max-width del contenidor a em
+*El contenidor s'ha fet més gran*
+
+Canviar el font-size del contenidor.
+*Li poso un font-size de 3rem, però no canvia res per la especificitat del css, ja que els fills del contenidor tenen definit el seu propi font-size*
+
+Canviar el margin i el padding a em
+*Els margins i els paddings ara són gegants i trenquen tota la estètica de la pàgina*
+
+Te sentit canviar el margin i el padding?
+*No té sentit, ja que ara la pàgina ha perdut tota la estètica i els margins i paddings són molt grans per passar de "px" a "em"*
+
+2- Instal.lar en visual code la llibreria “px to rem”
+Fet
+
+3- Canviar tots els pixels a rem amb “Alt Z”
+Fet
+
+
+
+
+
+
+Exercici 3.1:
+
+1-  Canviar la grandaria de contenidor amb width i height relatiu i absolut. Provar de canviar les grandaries del navegador web
+  Percentuals
+
+  width: 100%;
+  height: 50%;
+
+  Absolutes
+
+  width: 10cm;
+  height: 20cm;
+
+
+-->
