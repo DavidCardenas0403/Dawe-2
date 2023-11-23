@@ -13,6 +13,10 @@ import TheNavigation from "./components/TheNavigation.vue";
 </template>
 
 <style scoped>
+header {
+  height: 10vh;
+  width: 100%;
+}
 .container {
   min-height: 90vh;
 }

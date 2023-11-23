@@ -7,7 +7,7 @@ import HomeView from "../views/HomeView.vue";
 import DestinationShow from "../views/DestinationShow.vue";
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
@@ -15,7 +15,7 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/destination/:id",
+      path: "/destination/:id/:slug",
       name: "destination.show",
       component: DestinationShow,
     },
@@ -23,7 +23,10 @@ const router = createRouter({
       path: "/destination/:id/:slug",
       name: "destination.show",
       component: DestinationShow,
-      props: (route) => ({ ...route.params, id: parseInt(route.params.id[0]) }),
+      props: (route) => ({
+        ...route.params,
+        id: parseInt(route.params.id as string),
+      }),
 
       children: [
         {
@@ -32,11 +35,6 @@ const router = createRouter({
           component: () => import("../views/ExperienceShow.vue"),
         },
       ],
-    },
-    {
-      path: "/destination/:id",
-      name: "destination.show",
-      component: DestinationShow,
     },
   ],
 });
