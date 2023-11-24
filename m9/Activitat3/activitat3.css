@@ -4,3 +4,82 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
+main {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+
+  /* Exercici 3 */
+  opacity: 50%;
+  /* Exercici 3 */
+}
+
+/* Exercici 1 */
+
+button {
+  border: 10px dotted red;
+  margin: 50px;
+  padding: 60px;
+  padding: 60px 40px;
+  padding: 60px 40px 20px;
+  padding: 60px 40px 20px 0px;
+}
+
+/* Exercici 2 */
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-table {
+  display: inline-table;
+}
+
+.list-item {
+  display: list-item;
+}
+
+/* Exercici 3 */
+
+header > img {
+  position: absolute;
+  z-index: 1;
+}
+
+/* Exercici 4 */
+
+.exercici4 p {
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+}
+
+.visible {
+  overflow: visible;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.scroll {
+  overflow: scroll;
+}
+
+.auto {
+  overflow: auto;
+}
+
+/* Exercici 5 */
+
+header > img {
+  position: fixed;
+  left: 150px;
+}
