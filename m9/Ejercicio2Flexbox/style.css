@@ -18,18 +18,18 @@ h1 {
   padding: 20px 0 20px 10px;
 }
 #subtitle {
-  background-color: darkgray;
+  background-color: rgb(148, 148, 148);
 }
 #subtitle h2 {
   padding-left: 0.5%;
+  font-size: 2rem;
   width: 50%;
 }
 nav {
   justify-content: space-around;
   align-items: center;
   background-color: rgb(215, 215, 215);
-  height: 70px;
-  margin-bottom: 5px;
+  height: 40px;
 }
 a {
   color: black;
@@ -37,28 +37,44 @@ a {
   font-size: 1.5rem;
 }
 
-.content {
-  justify-content: space-around;
-  margin-top: 30px;
-  margin-left: 0.5%;
-}
-.content img,
-p {
-  margin-right: 20px;
-}
-footer {
-  display: flex;
-  background-color: rgb(215, 215, 215);
-  margin-top: 30px;
-  width: 100%;
-  justify-self: flex-end;
-}
-footer p {
-  padding-left: 0.5%;
-}
-body {
-  height: 100%;
+main {
   display: flex;
   flex-direction: column;
+  gap: 25px;
+}
+
+.content {
   justify-content: space-around;
+}
+.content img {
+  margin-right: 20px;
+}
+
+.content > article > p {
+  font-size: 1.2rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  background-color: rgb(215, 215, 215);
+  width: 100%;
+  justify-self: flex-end;
+  height: 100px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+footer p {
+  width: 100%;
+  margin: 0;
+  padding-left: 30px;
+  font-size: 1.2rem;
+}
+body {
+  min-height: 100vh;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
