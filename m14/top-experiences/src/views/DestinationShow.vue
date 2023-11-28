@@ -5,7 +5,9 @@ import router from "@/router";
 import { ref, type Ref, computed } from "vue";
 import type { RouteParams } from "vue-router";
 
-const props = defineProps(["id"]);
+const props = defineProps<{
+  id: number;
+}>();
 
 const destination = computed(() => {
   return data.destinations.find((destination) => destination.id === props.id);
