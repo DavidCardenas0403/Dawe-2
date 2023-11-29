@@ -58,5 +58,11 @@ const goBack = (): void => {
   border-radius: 10px;
   border: 1px solid black;
   margin-bottom: 10px;
+  cursor: pointer;
+  background-color: rgb(218, 218, 218);
+}
+
+.goBack:hover {
+  background-color: rgb(197, 197, 197);
 }
 </style>
