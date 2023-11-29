@@ -11,10 +11,7 @@ defineProps<{
     <router-link :to="`/destination/${info.id}/${info.slug}`">
       <h2>{{ info.name }}</h2>
     </router-link>
-    <img
-      :src="`../../public/images/${info.image}`"
-      :alt="`Imagen de ${info.name}`"
-    />
+    <img :src="`/images/${info.image}`" :alt="`Imagen de ${info.name}`" />
   </article>
 </template>
 
