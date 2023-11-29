@@ -59,11 +59,6 @@ a:visited {
 .nav a:hover {
   opacity: 1;
 }
-#logo {
-  font-weight: bold;
-  font-size: 1.5rem;
-  opacity: 1 !important;
-}
 
 a {
   text-decoration: none;
@@ -116,6 +111,7 @@ a {
   display: block;
   border-top: 2px solid #4e6c71;
   padding: 10px;
+  margin: 0;
 }
 
 .experience-details img {
@@ -123,100 +119,8 @@ a {
   margin: 10px;
 }
 
-/*Modal Overlay*/
-.modal-overlay:before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 3;
-}
-.modal-overlay-content {
-  border-radius: 3px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-  min-width: 300px;
-  max-width: 800px;
-  background: white;
-  padding: 15px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
-}
-.close {
-  position: absolute;
-  top: 0px;
-  right: 10px;
-  padding: 10px;
-  font-size: 1.4rem;
-}
-
 .go-back {
   display: inline-block;
   margin-bottom: 15px;
+  cursor: pointer;
 }
-/* Form */
-.form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.input {
-  border: 1px solid gray;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
-.btn {
-  background-color: #2c3e50;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-/* @import './base.css';
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-#app {
-  width: 100vw;
-  min-height: 100vh;
-  font-weight: normal;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-} */
-
-/* @media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-} */

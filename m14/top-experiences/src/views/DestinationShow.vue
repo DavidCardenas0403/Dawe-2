@@ -22,7 +22,7 @@ const goBack = (): void => {
   <main>
     <section class="destination">
       <h1>{{ destination?.name }}</h1>
-      <button class="goBack" @click="goBack">Go back</button>
+      <button class="go-back" @click="goBack">Go back</button>
       <article class="destination-details">
         <img
           :src="`/images/${destination?.image}`"
@@ -51,18 +51,3 @@ const goBack = (): void => {
     <router-view />
   </main>
 </template>
-
-<style scoped>
-.goBack {
-  padding: 5px;
-  border-radius: 10px;
-  border: 1px solid black;
-  margin-bottom: 10px;
-  cursor: pointer;
-  background-color: rgb(218, 218, 218);
-}
-
-.goBack:hover {
-  background-color: rgb(197, 197, 197);
-}
-</style>
