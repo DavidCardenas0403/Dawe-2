@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type Experience from "@/types/Experience";
-const props = defineProps<{
+defineProps<{
   experience: Experience;
 }>();
 </script>

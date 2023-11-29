@@ -7,9 +7,9 @@ const destinations: Destination[] = data.destinations;
 </script>
 
 <template>
-  <main>
+  <main class="home">
     <h1>All destinations</h1>
-    <section>
+    <section class="destinations">
       <Experience
         v-for="destination in destinations"
         :key="destination.id"
@@ -18,14 +18,3 @@ const destinations: Destination[] = data.destinations;
     </section>
   </main>
 </template>
-
-<style scoped>
-main {
-  width: 100%;
-}
-
-section {
-  display: flex;
-  justify-content: space-evenly;
-}
-</style>

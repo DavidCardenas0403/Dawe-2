@@ -1,26 +1,23 @@
 <script lang="ts" setup>
+import data from "../../data/data.json";
 import { RouterLink } from "vue-router";
-import router from "@/router";
-console.log(router.currentRoute.value.params);
+import type Destination from "@/types/Destination";
+
+const destinations: Destination[] = data.destinations;
 </script>
 
 <template>
-  <nav>
+  <nav class="nav">
     <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/destination/1/brazil">Brazil</RouterLink>
-    <RouterLink to="/destination/2/panama">Panama</RouterLink>
-    <RouterLink to="/destination/3/hawaii">Hawaii</RouterLink>
-    <RouterLink to="/destination/4/jamaica">Jamaica</RouterLink>
+    <router-link
+      v-for="destination in destinations"
+      :key="destination.id"
+      :to="{
+        name: 'destination.show',
+        params: { id: destination.id, slug: destination.slug },
+      }"
+    >
+      {{ destination.name }}
+    </router-link>
   </nav>
 </template>
-
-<style scoped>
-nav {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-}
-</style>

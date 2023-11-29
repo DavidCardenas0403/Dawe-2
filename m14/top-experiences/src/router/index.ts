@@ -1,8 +1,4 @@
-import {
-  createRouter,
-  createWebHistory,
-  createWebHashHistory,
-} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import DestinationShow from "../views/DestinationShow.vue";
 
@@ -32,6 +28,10 @@ const router = createRouter({
         {
           path: ":experienceSlug",
           name: "experience.show",
+          props: (route) => ({
+            ...route.params,
+            id: parseInt(route.params.id as string),
+          }),
           component: () => import("../views/ExperienceShow.vue"),
         },
       ],

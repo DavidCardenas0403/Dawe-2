@@ -7,19 +7,10 @@ defineProps<{
 </script>
 
 <template>
-  <article>
-    <router-link :to="`/destination/${info.id}/${info.slug}`">
+  <router-link :to="`/destination/${info.id}/${info.slug}`">
+    <article>
       <h2>{{ info.name }}</h2>
-    </router-link>
-    <img :src="`/images/${info.image}`" :alt="`Imagen de ${info.name}`" />
-  </article>
+      <img :src="`/images/${info.image}`" :alt="`Imagen de ${info.name}`" />
+    </article>
+  </router-link>
 </template>
-
-<style scoped>
-article {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 23vw;
-}
-</style>

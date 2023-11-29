@@ -2,15 +2,14 @@
 import type Destination from "@/types/Destination";
 import data from "../../data/data.json";
 import router from "@/router";
-import { ref, type Ref, computed } from "vue";
-import ExperienceShow from "./ExperienceShow.vue";
+import { computed, type ComputedRef } from "vue";
 import ExperienceCard from "@/components/ExperienceCard.vue";
 
 const props = defineProps<{
   id: number;
 }>();
 
-const destination = computed(() => {
+const destination: ComputedRef<Destination | undefined> = computed(() => {
   return data.destinations.find((destination) => destination.id === props.id);
 });
 
@@ -21,9 +20,9 @@ const goBack = (): void => {
 
 <template>
   <main>
-    <section>
+    <section class="destination">
       <h1>{{ destination?.name }}</h1>
-      <button @click="goBack">Go Back</button>
+      <button class="goBack" @click="goBack">Go back</button>
       <article class="destination-details">
         <img
           :src="`/images/${destination?.image}`"
@@ -36,16 +35,28 @@ const goBack = (): void => {
     <section class="experiences">
       <h2>{{ `Top Experiences in ${destination?.name}` }}</h2>
       <div class="cards">
-        <ExperienceCard
+        <router-link
           v-for="experience in destination?.experiences"
           :key="experience.slug"
-          :experience="experience"
-        />
+          :to="{
+            name: 'experience.show',
+            params: { experienceSlug: experience.slug },
+          }"
+        >
+          <ExperienceCard :experience="experience" />
+        </router-link>
       </div>
     </section>
 
-    <section>
-      <ExperienceShow />
-    </section>
+    <router-view />
   </main>
 </template>
+
+<style scoped>
+.goBack {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+</style>
