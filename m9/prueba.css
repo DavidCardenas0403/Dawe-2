@@ -1,4 +1,18 @@
-p {
+.grid-container {
+  display: grid;
+  background-color: cornsilk;
+  grid-gap: 5px;
+  border: 5px solid blue;
+  grid-template-areas:
+    "header header header header header"
+    "menu main main aside aside"
+    "menu footer footer footer footer";
+}
+
+.grid-container * {
+  background-color: green;
+  text-align: center;
+  color: white;
   border: 1px solid black;
-  border-top: 5px dotted green;
+  padding: 10px;
 }

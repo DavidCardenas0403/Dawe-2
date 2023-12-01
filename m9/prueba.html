@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./prueba.css" />
-    <title>Prueba</title>
+    <meta charset="utf-8" />
+    <title>Ejemplo CSSGridItems</title>
+    <link rel="stylesheet" href="prueba.css" />
   </head>
   <body>
-    <p>Hola que tal</p>
+    <div class="grid-container">
+      <header style="grid-area: header">Cabecera</header>
+      <nav style="grid-area: menu">Menu</nav>
+      <main style="grid-area: main">Articulo principal</main>
+      <aside style="grid-area: aside">Articulo</aside>
+      <footer style="grid-area: footer">Pie de pagina</footer>
+    </div>
   </body>
 </html>
