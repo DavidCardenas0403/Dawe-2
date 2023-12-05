@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type Ref, reactive } from "vue";
+import { ref, type Ref, reactive, provide } from "vue";
 import type Product from "./types/Product";
 import type { Currency } from "./types/Currency";
 import Comanda from "./components/Comanda.vue";
@@ -11,6 +11,20 @@ const products: Product[] = reactive([
   { name: "Impossible Burger 🥕", price: 7 },
   { name: "Fries 🍟", price: 2 },
 ]);
+
+const cart: Ref<Product[]> = ref([]);
+
+const addToCart = (product: Product): void => {
+  cart.value.push(product);
+  alert(cart.value.map((product) => product.name));
+};
+
+const placeOrder = (): void => {
+  cart.value = [];
+  alert(`Your order ${orderName.value} has been placed.`);
+};
+
+provide("currency", currency);
 </script>
 
 <template>
@@ -18,7 +32,7 @@ const products: Product[] = reactive([
     <h1>{{ orderName }}</h1>
     <section>
       <input v-model="orderName" type="text" />
-      <button type="button">Place Order</button>
+      <button @click="placeOrder" type="button">Place Order</button>
     </section>
   </header>
 
@@ -33,9 +47,9 @@ const products: Product[] = reactive([
     </div>
     <section class="productes">
       <Comanda
+        @@add-to-cart="(product:Product) => addToCart(product)"
         v-for="(product, index) in products"
         :info="product"
-        :currency="currency"
         :key="index"
       />
     </section>

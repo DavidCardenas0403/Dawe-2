@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, inject, type Ref } from "vue";
 import type { Currency } from "@/types/Currency";
 
 const props = defineProps<{
   price: number;
-  currency: Currency;
 }>();
+const currency: Ref<Currency> | undefined = inject("currency");
+
 //0.86, 1.09
 const price = computed(() => {
-  switch (props.currency) {
+  switch (currency?.value) {
     case "€":
       return props.price;
     case "$":
@@ -20,5 +21,5 @@ const price = computed(() => {
 </script>
 
 <template>
-  <span>{{ `${price}${props.currency}` }}</span>
+  <span>{{ `${price}${currency}` }}</span>
 </template>
