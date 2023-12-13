@@ -5,6 +5,8 @@ export default function usePost() {
   const post = ref(null);
   const baseUrl = "https://jsonplaceholder.typicode.com/";
   /* 
+  Respostes de la part grupal
+
   2 - La funció fetch
   3 - Una variable reactiva que guardi tots els posts, és un array d'objectes. 
   Ha de ser reactiva perquè si canvia la url, també cambiaran els posts (ja que es crida a una altre a url amb el fetch)

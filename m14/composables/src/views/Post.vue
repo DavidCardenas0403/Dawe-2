@@ -6,18 +6,22 @@
   </div>
 </template>
 <script setup>
+import { watch } from "vue";
+
 import { useRoute } from "vue-router";
 import usePost from "../composables/usePost.js";
 import useUser from "../composables/useUser.js";
-const { llegirPost, post } = usePost();
-const { llegirUser, user } = useUser();
+import useResource from "../composables/useResource.js";
+//const { llegirPost, post } = usePost();
+//const { llegirUser, user } = useUser();
+const { llegirUn: llegirPost, info: post } = useResource("posts");
+const { llegirUn: llegirUser, info: user } = useResource("users");
+
 const router = useRoute();
+llegirPost(router.params.id);
 
-const getPost = async () => {
-  await llegirPost(router.params.id);
-};
-
-getPost();
-
-llegirUser(post.value.userId);
+watch(
+  () => ({ ...post.value }),
+  () => llegirUser(post.value.userId)
+);
 </script>
