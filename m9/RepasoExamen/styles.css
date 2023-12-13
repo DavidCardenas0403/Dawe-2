@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  gap: 10px;
+  min-height: 98vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "aside header header rojo1"
+    "aside amarillo1 rojo2 verde"
+    "aside rojo3 amarillo2 verde";
+}
