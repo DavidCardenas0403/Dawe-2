@@ -1,0 +1,10 @@
+body {
+  min-height: 98vh;
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  grid-template-rows: 1fr 0.8fr 1.2fr;
+  grid-template-areas:
+    "uno dos dos tres"
+    "uno dos dos cuatro"
+    "uno cinco seis siete";
+}
