@@ -1,0 +1,36 @@
+h1 {
+	color: #e54c08;
+	font-weight: 400;
+	width: 50%;
+	margin: 0 auto;
+	border-bottom: 1px solid grey;
+}
+
+h1 ~ p {
+	width: 50%;
+	margin: 25px auto;
+}
+
+form {
+	width: 40%;
+	margin: 0 auto;
+	display:grid;
+	grid-template-rows: 1fr 1fr 8fr 2fr;
+	grid-template-areas: 
+	"nom inputNom ."
+	"email inputEmail ."
+	"consulta textarea textarea"
+	". enviar ."
+	;
+	row-gap: 20px;
+	margin-bottom: 30px;
+}
+
+#consulta {
+	resize:none;
+}
+
+form button {
+	width: 80px;
+	
+}

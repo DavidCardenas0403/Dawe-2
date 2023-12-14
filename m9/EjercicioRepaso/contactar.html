@@ -26,14 +26,16 @@
     	Tots/es tenim altres responsabilitats, així que potser triguem a contestar, però... prometem fer-ho!
     </p>
     <form>
-    	<label for="nom">Nom</label>
-			<input name="nom" id="nom">
+    	<label for="nom" style="grid-area:nom;" >Nom</label>
+			<input name="nom" id="nom" style="grid-area:inputNom;">
 			
-			<label for="email">E-Mail</label>
-			<input id="email" name="email">
+			<label for="email" style="grid-area:email;">E-Mail</label>
+			<input id="email" name="email" style="grid-area:inputEmail;">
     	
-    	<label for="consulta">Consulta</label>
-			<input id="consulta" name="consulta">
+    	<label for="consulta" style="grid-area:consulta;">Consulta</label>
+			<textarea id="consulta" name="consulta" style="grid-area:textarea;"></textarea>
+			
+			<button style="grid-area:enviar;">Enviar</button>
     </form>
     
     <footer>
