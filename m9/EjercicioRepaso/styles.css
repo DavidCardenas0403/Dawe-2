@@ -7,3 +7,91 @@ a:hover {
 .selected:hover {
   background-color: #c53f06;
 }
+
+header {
+	padding: 40px;
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	gap: 30px;
+}
+
+a {
+	padding: 10px 20px;
+	border-radius: 10px;
+	color: white;
+	background-color: #686868;
+	text-decoration: none;
+}
+
+
+footer {
+	width: 50%;
+	margin: 0 auto;
+	display:flex;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+
+footer > div {
+	width: 30%;
+}
+
+.footer1 {
+	display:flex;
+	flex-direction:column;
+	gap:5px;
+}
+
+.footer1 > p {
+	color: #e54c08;
+}
+
+.footer1_buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.button {
+	padding: 10px;
+	font-size: 1.3rem;
+	color: white;
+	background-color: #3c3b3b;
+	border: 0;
+	border-radius: 10px;
+	font-weight: 600;
+}
+
+.spotify {
+	border-left: 1px solid #e54c08;
+	padding-left: 10px;
+}
+
+.footer2 {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap: 10px;
+}
+
+.footer2 > img:nth-child(1) {
+	width: 46px;
+	height: 65px;
+}
+
+.footer2 > img:nth-child(2) {
+	width: 88px;
+	height: 31px;
+}
+
+.footer3 > p {
+	margin: 0;
+		font-size: 0.8rem;
+}
+
+.cc {
+	color: #e54c08;
+	padding: 0;
+	background-color: transparent;
+}
