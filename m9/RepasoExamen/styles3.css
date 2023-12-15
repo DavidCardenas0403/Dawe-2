@@ -1,0 +1,15 @@
+body {
+  min-height: 98vh;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr repeat(2, 0.8fr);
+  grid-template-areas:
+    "uno dos tres"
+    "cuatro dos seis"
+    "cuatro cinco seis";
+}
+
+div {
+  background-color: black;
+}
