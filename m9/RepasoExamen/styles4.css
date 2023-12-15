@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "uno uno dos tres"
+    "cuatro cinco seis ."
+    "siete siete ocho nueve"
+    "siete siete diez a"
+    "once once once doce";
+}
+
+div {
+  background-color: black;
+}
