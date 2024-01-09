@@ -1,7 +1,13 @@
 <script setup>
 import TheHeader from "@/components/TheHeader.vue";
 import ProductCard from "@/components/ProductCard.vue";
-import products from "@/data/products.json";
+import { useProductStore } from "./stores/ProductStore";
+import { storeToRefs } from "pinia";
+import { useCartStore } from "./stores/CartStore";
+const productStore = useProductStore();
+const cartStore = useCartStore();
+const { products } = storeToRefs(useProductStore());
+productStore.fill();
 </script>
 
 <template>
@@ -12,6 +18,7 @@ import products from "@/data/products.json";
         v-for="product in products"
         :key="product.name"
         :product="product"
+        @addToCart="cartStore.items.push(product)"
       />
     </ul>
   </div>
