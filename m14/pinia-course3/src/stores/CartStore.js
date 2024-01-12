@@ -1,11 +1,11 @@
-import { defineStore } from "pinia";
-import { groupBy } from "lodash";
+import { defineStore } from 'pinia'
+import { groupBy } from 'lodash'
 
-export const useCartStore = defineStore("CartStore", {
+export const useCartStore = defineStore('CartStore', {
   state: () => {
     return {
       items: [],
-    };
+    }
   },
   getters: {
     count: (state) => state.items.length,
@@ -17,13 +17,14 @@ export const useCartStore = defineStore("CartStore", {
   },
   actions: {
     addItems(count, item) {
-      count = parseInt(count);
+      count = parseInt(count)
       for (let index = 0; index < count; index++) {
-        this.items.push({ ...item });
+        this.items.push({ ...item })
       }
     },
     clearItem(name) {
-      this.items = this.items.filter((item) => item.name != name);
+      this.items = this.items.filter((item) => item.name != name)
     },
+    setItemCount(item, count) {},
   },
-});
+})

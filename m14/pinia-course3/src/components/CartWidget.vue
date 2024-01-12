@@ -1,13 +1,13 @@
 <script setup>
 // imports
-import { ref } from "vue";
-import CartItem from "./CartItem.vue";
-import { useCartStore } from "../stores/CartStore";
+import { ref } from 'vue'
+import CartItem from './CartItem.vue'
+import { useCartStore } from '../stores/CartStore'
 
-const cartStore = useCartStore();
+const cartStore = useCartStore()
 
 // data
-const active = ref(false);
+const active = ref(false)
 </script>
 <template>
   <div class="relative">
@@ -25,7 +25,7 @@ const active = ref(false);
             :key="name"
             :product="items[0]"
             :count="cartStore.groupCount(name)"
-            @updateCount=""
+            @updateCount="cartStore.setItemCount(items[0], $event)"
             @clear="cartStore.clearItem(name)"
           />
         </ul>
