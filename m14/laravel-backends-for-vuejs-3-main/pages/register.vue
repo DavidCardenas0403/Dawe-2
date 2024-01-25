@@ -1,33 +1,51 @@
 <script setup lang="ts">
+import {ref, type Ref} from "vue"
+import type {Form} from "../types/Form"
+import axios from "axios"
 definePageMeta({
   layout: "centered",
 });
+
+const form = ref<Form>({
+    name: "",
+    email:"",
+    password:"",
+    confPassword:""
+})
+const handleSubmit = async (form:Form) => {
+  let responseRegister
+  try {
+    responseRegister = await axios.post("http://localhost/api/register")
+  } catch (e) {
+    console.error(`Ha ocurrido un error: ${e}`)
+  }
+}
 </script>
 <template>
   <div class="register">
     <h1>Register</h1>
-    <form>
+    <form @submit.prevent="() => handleSubmit(form)">
       <label>
         <div>Name</div>
-        <input type="text" />
+        <input v-model="form.name" type="text"  required/>
       </label>
 
       <label>
         <div>Email</div>
-        <input type="email" />
+        <input v-model="form.email" type="email" />
       </label>
 
       <label>
         <div>Password</div>
-        <input type="password" />
+        <input v-model="form.password" type="password" />
       </label>
 
       <label>
         <div>Confirm Password</div>
-        <input type="password" />
+        <input v-model="form.confPassword" type="password" />
       </label>
 
-      <button class="btn">Register</button>
+      <button type="submit" class="btn">Register</button>
     </form>
 
     <p>
