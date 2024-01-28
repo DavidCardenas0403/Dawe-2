@@ -1,103 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      let image = 1
+
+      function nextImage() {
+        const oldImg = document.getElementById(`img${image}`)
+        oldImg.classList.remove('show')
+
+        document.getElementById(`btn${image}`).classList.remove('selected-btn')
+
+        if (image < 3) image++
+        else image = 1
+
+        const newImg = document.getElementById(`img${image}`)
+        newImg.classList.add('show')
+
+        document.getElementById(`btn${image}`).classList.add('selected-btn')
+      }
+
+      function previousImage() {
+        const oldImg = document.getElementById(`img${image}`)
+        oldImg.classList.remove('show')
+
+        document.getElementById(`btn${image}`).classList.remove('selected-btn')
+
+        if (image > 1) image--
+        else image = 3
+
+        const newImg = document.getElementById(`img${image}`)
+        newImg.classList.add('show')
+
+        document.getElementById(`btn${image}`).classList.add('selected-btn')
+      }
+
+      function setImage(imgNumber) {
+        document.getElementById(`img${image}`).classList.remove('show')
+        document.getElementById(`btn${image}`).classList.remove('selected-btn')
+        image = imgNumber
+        document.getElementById(`img${image}`).classList.add('show')
+        document.getElementById(`btn${image}`).classList.add('selected-btn')
+      }
+    </script>
     <title>Index</title>
   </head>
   <body>
     <header>
       <img src="./logo-humans.png" alt="Imagen header" />
-      <div>
+      <nav>
         <a class="selected" href="./index.html">La idea</a>
         <a href="#">Llença't</a>
         <a href="#">H-team</a>
         <a href="#">Amistats</a>
         <a href="#">Opinions</a>
         <a href="./contactar.html">Contactar</a>
-      </div>
+      </nav>
     </header>
 
-    <img class="img-principal" src="./03.jpg" alt="Imagen principal" />
+    <div class="slider">
+      <img
+        id="img1"
+        class="img-principal show"
+        src="./01.jpg"
+        alt="Imagen principal"
+      />
+      <img
+        id="img2"
+        class="img-principal"
+        src="./02.jpg"
+        alt="Imagen principal"
+      />
+      <img
+        id="img3"
+        class="img-principal"
+        src="./03.jpg"
+        alt="Imagen principal"
+      />
+      <div class="btn">
+        <button onclick="previousImage()"><</button>
+        <button onclick="nextImage()">></button>
+      </div>
+    </div>
+
+    <div class="menu-slider">
+      <button class="selected-btn" id="btn1" onclick="setImage(1)"></button>
+      <button id="btn2" onclick="setImage(2)"></button>
+      <button id="btn3" onclick="setImage(3)"></button>
+    </div>
 
     <article>
-			<h1>Sobre humans.txt</h1>
-			<div class="article1 uno">
-				<h2>Què és?</h2>
-				<div>
-					<img src="./01-what-is-humans-txt.png" alt"Imagen del artículo 1">
-					<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-				</div>
-			</div>
-			
-			<div class="article1 dos">
-				<h2>Per què un TXT?</h2>
-				<div>
-					<img src="./02-why-a-txt.png" alt"Imagen del artículo 2">
-					<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-				</div>
-			</div>
-			
-			<div class="article2 tres">
-				<img src="./03-where-is-located.png" alt"Imagen del artículo 3">
-				<h2>On va?</h2>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-			</div>
-			
-			<div class="article2 cuatro">
-				<img src="./04-why-should-i.png" alt"Imagen del artículo 4">
-				<h2>Per què he de fer-ho?</h2>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-			</div>
-			
-			<div class="article2 cinco">
-				<img src="./05-who-should-i-mention.png" alt"Imagen del artículo 5">
-				<h2>A qui he d'afegir?</h2>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-			</div>
-			
-			<div class="article2 tres">
-				<img src="./06-meta-name-or-humans-txt.png" alt"Imagen del artículo 6">
-				<h2>Meta Name vs. humans.txt?</h2>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-			</div>
-			
-			<div class="article2 cuatro">
-				<img src="./07-the-internet-is-for-humans.png" alt"Imagen del artículo 7">
-				<h2>El web és per a humans...</h2>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-			</div>
-			
-			<div class="article2 cinco">
-				<img src="./08-looking-for-a-standard.png" alt"Imagen del artículo 8">
-				<h2>Cercant un estàndard.</h2>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-			</div>
+      <h1>Sobre humans.txt</h1>
+      <div class="article1 uno">
+        <h2>Què és?</h2>
+        <div>
+          <img src="./01-what-is-humans-txt.png" alt="Imagen del artículo 1" />
+          <p>
+            Un fitxer TXT que conté la informació sobre les persones que han
+            intervingut en un web.
+          </p>
+        </div>
+      </div>
+
+      <div class="article1 dos">
+        <h2>Per què un TXT?</h2>
+        <div>
+          <img src="./02-why-a-txt.png" alt="Imagen del artículo 2" />
+          <p>
+            És fàcil i ràpid de crear. Perquè no es intrusiu amb el codi. Molts
+            cops els propietaris dels llocs web no volen que els autors firmin
+            el seu web al·legant que en redueix el rendiment. D’aquesta forma
+            pots demostrar-ne l’autoria (que no propietat) de forma externa,
+            ràpida, senzilla i accessible.
+          </p>
+        </div>
+      </div>
+
+      <div class="article2 tres">
+        <img src="./03-where-is-located.png" alt="Imagen del artículo 3" />
+        <h2>On va?</h2>
+        <p>
+          A l’arrel del lloc web. Al costat del robots.txt. I (sempre que es
+          pugui) al head afegeix en el Tag author link type="text/plain"
+          rel="author" href="http://domain/humans.txt"
+        </p>
+      </div>
+
+      <div class="article2 cuatro">
+        <img src="./04-why-should-i.png" alt="Imagen del artículo 4" />
+        <h2>Per què he de fer-ho?</h2>
+        <p>
+          No estàs obligat. És una iniciativa per conèixer els autors dels llocs
+          web que visitem.
+        </p>
+      </div>
+
+      <div class="article2 cinco">
+        <img src="./05-who-should-i-mention.png" alt="Imagen del artículo 5" />
+        <h2>A qui he d'afegir?</h2>
+        <p>
+          A qui vulguis, sempre que ells i elles hi vulguin aparèixer. Pots
+          afegir al desenvolupador, al dissenyador, al copy, al webmaster, al
+          gestor de continguts, al SEO, SEM o SMO,... Com veus la llista és
+          interminable. Som moltes les persones que podem intervenir en la
+          creació d’un lloc web.
+        </p>
+      </div>
+
+      <div class="article2 tres">
+        <img
+          src="./06-meta-name-or-humans-txt.png"
+          alt="Imagen del artículo 6"
+        />
+        <h2>Meta Name vs. humans.txt?</h2>
+        <p>
+          No et facis aquesta pregunta. No és una lluita. És un complement per
+          poder ampliar la informació dels autors.
+        </p>
+      </div>
+
+      <div class="article2 cuatro">
+        <img
+          src="./07-the-internet-is-for-humans.png"
+          alt="Imagen del artículo 7"
+        />
+        <h2>El web és per a humans...</h2>
+        <p>
+          Sempre ho diem. Generem un arxiu amb informació complementària per als
+          motors de cerca... robots.txt. Per què no fer-ho també per a
+          nosaltres?
+        </p>
+      </div>
+
+      <div class="article2 cinco">
+        <img
+          src="./08-looking-for-a-standard.png"
+          alt="Imagen del artículo 8"
+        />
+        <h2>Cercant un estàndard.</h2>
+        <p>
+          Ens agraden les coses ben fetes. Volem marcar unes pautes per a un
+          humans.txt unificat. Abel Cabans en va definir els camps bàsics, que
+          pots consultar al nostre
+          <a class="link" target="_blank" href="http://www.humanstxt.org/CA"
+            >humans.txt</a
+          >. <br />També ets lliure d’afegir-hi el que vulguis.
+        </p>
+      </div>
     </article>
 
     <footer>
-    	<div class="footer1">
-    		<p>Creus que hi falta alguna cosa?</p>
-    		<div class="footer1_buttons">
-    			<button class="button">@</button>
-    			<button class="button">T</button>
-    			<button class="button">F</button>
-    			<img class="spotify" src="./spotify.png" alt"Icono Spotify">
-    		</div>
-    	</div>
-    	
-    	<div class="footer2">
-    		<img src="./ico-html5.png" alt"Icono HTML5">
-    		<img src="humanstxt-isolated-blank.gif" alt"Gif humans.txt">
-    	</div>
-    	
-    	<div class="footer3">
-    		<img src="./CC.png" alt="Imagen Creative Commons">
-    		<p>humans.txt is licensed under a <a class="cc" href="#">Creative Commons Atributtion-NonCommercial-Share</a></p>
-    	</div>
+      <div class="footer1">
+        <p class="bold">Creus que hi falta alguna cosa?</p>
+        <div class="footer1_buttons">
+          <button class="button">@</button>
+          <button class="button">T</button>
+          <button class="button">F</button>
+          <img class="spotify" src="./spotify.png" alt="Icono Spotify" />
+        </div>
+      </div>
+
+      <div class="footer2">
+        <img src="./ico-html5.png" alt="Icono HTML5" />
+        <img src="humanstxt-isolated-blank.gif" alt="Gif humans.txt" />
+      </div>
+
+      <div class="footer3">
+        <img src="./CC.png" alt="Imagen Creative Commons" />
+        <p>
+          humans.txt is licensed under a
+          <a class="cc" href="#"
+            >Creative Commons Atributtion-NonCommercial-Share</a
+          >
+        </p>
+      </div>
     </footer>
   </body>
 </html>

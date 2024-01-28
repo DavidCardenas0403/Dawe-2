@@ -1,6 +1,17 @@
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 body {
-	background-color: lightgrey;
-	margin: 0;
+  background-color: #eaeaea;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
 a:hover {
@@ -14,89 +25,92 @@ a:hover {
 }
 
 header {
-	padding: 40px;
-	display:flex;
-	flex-direction: column;
-	justify-content:center;
-	align-items:center;
-	gap: 30px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 a {
-	padding: 10px 20px;
-	border-radius: 10px;
-	color: white;
-	background-color: #686868;
-	text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: #686868;
+  text-decoration: none;
 }
 
+p {
+  margin-top: 0;
+}
 
 footer {
-	width: 50%;
-	margin: 0 auto;
-	display:flex;
-	justify-content: space-between;
-	margin-bottom: 40px;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
 
 footer > div {
-	width: 30%;
+  width: 30%;
 }
 
 .footer1 {
-	display:flex;
-	flex-direction:column;
-	gap:5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .footer1 > p {
-	color: #e54c08;
+  color: #e54c08;
 }
 
 .footer1_buttons {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .button {
-	padding: 10px;
-	font-size: 1.3rem;
-	color: white;
-	background-color: #3c3b3b;
-	border: 0;
-	border-radius: 10px;
-	font-weight: 600;
+  padding: 10px;
+  font-size: 1.3rem;
+  color: white;
+  background-color: #3c3b3b;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 600;
 }
 
 .spotify {
-	border-left: 1px solid #e54c08;
-	padding-left: 10px;
+  border-left: 1px solid #e54c08;
+  padding-left: 10px;
 }
 
 .footer2 {
-	display:flex;
-	justify-content:center;
-	align-items:center;
-	gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer2 > img:nth-child(1) {
-	width: 46px;
-	height: 65px;
+  width: 46px;
+  height: 65px;
 }
 
 .footer2 > img:nth-child(2) {
-	width: 88px;
-	height: 31px;
+  width: 88px;
+  height: 31px;
 }
 
 .footer3 > p {
-	margin: 0;
-		font-size: 0.8rem;
+  margin: 0;
+  font-size: 0.8rem;
 }
 
 .cc {
-	color: #e54c08;
-	padding: 0;
-	background-color: transparent;
+  color: #e54c08;
+  padding: 0;
+  background-color: transparent;
 }

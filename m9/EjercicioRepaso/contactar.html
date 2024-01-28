@@ -8,7 +8,7 @@
     <title>Contactar</title>
   </head>
   <body>
-  	<header>
+    <header>
       <img src="./logo-humans.png" alt="Imagen header" />
       <div>
         <a href="./index.html">La idea</a>
@@ -19,45 +19,63 @@
         <a class="selected" href="./contactar.html">Contactar</a>
       </div>
     </header>
-    
-    <h1>Contacte amb nosaltres</h1>
-    <p>
-    	Si creus que falta cap informació, o vols aportar / col·laborar amb nosaltres, contacta'ns.
-    	Tots/es tenim altres responsabilitats, així que potser triguem a contestar, però... prometem fer-ho!
-    </p>
-    <form>
-    	<label for="nom" style="grid-area:nom;" >Nom</label>
-			<input name="nom" id="nom" style="grid-area:inputNom;">
-			
-			<label for="email" style="grid-area:email;">E-Mail</label>
-			<input id="email" name="email" style="grid-area:inputEmail;">
-    	
-    	<label for="consulta" style="grid-area:consulta;">Consulta</label>
-			<textarea id="consulta" name="consulta" style="grid-area:textarea;"></textarea>
-			
-			<button style="grid-area:enviar;">Enviar</button>
-    </form>
-    
+
+    <div class="contenedor-contactar">
+      <h1>Contacte amb nosaltres</h1>
+      <p>
+        Si creus que falta cap informació, o vols aportar / col·laborar amb
+        nosaltres, contacta'ns. Tots/es tenim altres responsabilitats, així que
+        potser triguem a contestar, però... prometem fer-ho!
+      </p>
+      <form>
+        <label for="nom" style="grid-area: nom"
+          >Nom <span style="color: #e54c08">*</span></label
+        >
+        <input name="nom" id="nom" style="grid-area: inputNom" />
+
+        <label for="email" style="grid-area: email"
+          >E-Mail<span style="color: #e54c08">*</span></label
+        >
+        <input id="email" name="email" style="grid-area: inputEmail" />
+
+        <label for="consulta" style="grid-area: consulta"
+          >Consulta<span style="color: #e54c08">*</span></label
+        >
+        <textarea
+          id="consulta"
+          name="consulta"
+          style="grid-area: textarea"
+        ></textarea>
+
+        <button class="enviar">Enviar</button>
+      </form>
+    </div>
+
     <footer>
-    	<div class="footer1">
-    		<p>Creus que hi falta alguna cosa?</p>
-    		<div class="footer1_buttons">
-    			<button class="button">@</button>
-    			<button class="button">T</button>
-    			<button class="button">F</button>
-    			<img class="spotify" src="./spotify.png" alt"Icono Spotify">
-    		</div>
-    	</div>
-    	
-    	<div class="footer2">
-    		<img src="./ico-html5.png" alt"Icono HTML5">
-    		<img src="humanstxt-isolated-blank.gif" alt"Gif humans.txt">
-    	</div>
-    	
-    	<div class="footer3">
-    		<img src="./CC.png" alt="Imagen Creative Commons">
-    		<p>humans.txt is licensed under a <a class="cc" href="#">Creative Commons Atributtion-NonCommercial-Share</a></p>
-    	</div>
+      <div class="footer1">
+        <p>Creus que hi falta alguna cosa?</p>
+        <div class="footer1_buttons">
+          <button class="button">@</button>
+          <button class="button">T</button>
+          <button class="button">F</button>
+          <img class="spotify" src="./spotify.png" alt="Icono Spotify" />
+        </div>
+      </div>
+
+      <div class="footer2">
+        <img src="./ico-html5.png" alt="Icono HTML5" />
+        <img src="humanstxt-isolated-blank.gif" alt="Gif humans.txt" />
+      </div>
+
+      <div class="footer3">
+        <img src="./CC.png" alt="Imagen Creative Commons" />
+        <p>
+          humans.txt is licensed under a
+          <a class="cc" href="#"
+            >Creative Commons Atributtion-NonCommercial-Share</a
+          >
+        </p>
+      </div>
     </footer>
   </body>
 </html>

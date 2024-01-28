@@ -1,65 +1,153 @@
 .img-principal {
-	width: 100%
+  width: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+/* .slider img {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: opacity 0.5s;
+  width: 100%;
+  height: 800px;
+}
+
+.slider img:first-child {
+  display: block;
+}
+
+.slider img:target {
+  display: block;
+} */
+
+.menu-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.menu-slider > button,
+.btn > button {
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  border: 0;
+  padding: 0;
+  background-color: lightgrey;
+}
+
+.menu-slider > button:hover,
+.btn > button:hover {
+  background-color: rgb(191, 191, 191);
+}
+
+.selected-btn {
+  background-color: rgb(191, 191, 191) !important;
+}
+
+.btn > button {
+  position: absolute;
+  bottom: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.btn > button:first-child {
+  left: 10px;
+}
+
+.btn > button:nth-child(2) {
+  right: 10px;
 }
 
 article {
-	margin: 40px auto;
-	width: 50%;
-	display:grid;
-	grid-template-columns: repeat(6, 1fr);
-	grid-template-rows: 40px 1fr 1.5fr 1.5fr;
-	column-gap: 15px;
-	row-gap:20px;
+  margin: 40px auto;
+  width: 980px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 45px 225px repeat(2, 325px);
+  column-gap: 15px;
+  row-gap: 20px;
 }
 
 h1 {
-	font-weight: 100;
-	color: #e54c08;
-	border-bottom: 1px solid grey;
-	margin: 0;
-	vertical-align: center;
-	grid-column: 1/-1
+  font-weight: 100;
+  font-size: 2em;
+  color: #e54c08;
+  border-bottom: 1px solid grey;
+  margin: 0;
+  vertical-align: center;
+  grid-column: 1/-1;
 }
 
 h2 {
-	color: grey;
+  color: grey;
+  margin-bottom: 7px;
 }
 
 .article1 {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .article1 > div {
-	display: flex;
-	gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .uno {
-	grid-column: 1/4;
+  grid-column: 1/4;
 }
 
 .dos {
-	grid-column: 4/-1;
+  grid-column: 4/-1;
 }
 
 .tres {
-	grid-column: 1/3;
+  grid-column: 1/3;
 }
 
 .cuatro {
-	grid-column: 3/5;
+  grid-column: 3/5;
 }
 
 .cinco {
-	grid-column: 5/7;
+  grid-column: 5/7;
 }
 
 .article2 {
-	background-color: white;
-	padding: 15px;
+  background-color: white;
+  padding: 15px;
 }
 
 .article2 img {
-	width:100%;
+  width: 100%;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.link {
+  padding: 0;
+  border-radius: 0;
+  color: blue;
+  background-color: transparent;
+}
+
+.link:hover {
+  background-color: transparent;
 }
