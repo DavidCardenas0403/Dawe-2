@@ -3,8 +3,235 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="contactar.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <!--     <link rel="stylesheet" href="contactar.css" />
+    <link rel="stylesheet" href="styles.css" /> -->
+    <style>
+      .contenedor-contactar {
+        /* margin-left: 100px; */
+        margin: 0 auto;
+        width: 80%;
+      }
+
+      h1 {
+        color: #e54c08;
+        font-weight: 400;
+        width: 100%;
+        /* margin: 0 auto; */
+        border-bottom: 1px solid grey;
+      }
+
+      h1 ~ p {
+        width: 100%;
+        /* margin: 25px auto; */
+      }
+
+      form {
+        /*   width: 40%;
+ */
+        /* margin: 0 auto; */
+        width: auto;
+        display: grid;
+        grid-template-rows: 2fr 1fr 6fr 2fr;
+        grid-template-columns: 150px 80px 300px;
+        grid-template-areas:
+          'nom . inputNom'
+          'email . inputEmail'
+          'consulta . textarea'
+          '. enviar .';
+        row-gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      #consulta {
+        resize: none;
+      }
+
+      .enviar {
+        grid-area: enviar;
+        width: 80px;
+        font-size: 1rem;
+        background-color: black;
+        color: white;
+        border-radius: 15px;
+        border: 0;
+      }
+
+      @media (max-width: 640px) {
+        form {
+          grid-template-columns: 80px auto;
+          grid-template-areas:
+            'nom inputNom'
+            'email inputEmail'
+            'consulta textarea'
+            'enviar enviar';
+        }
+
+        .enviar {
+          justify-self: center;
+        }
+      }
+
+      * {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+
+      body {
+        background-color: #eaeaea;
+        margin: 0;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      nav > a {
+        text-align: center;
+      }
+
+      a:hover {
+        background-color: #3c3b3b;
+      }
+      .selected {
+        background-color: #e54c08;
+      }
+      .selected:hover {
+        background-color: #c53f06;
+      }
+
+      header {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
+
+      a {
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: white;
+        background-color: #686868;
+        text-decoration: none;
+      }
+
+      p {
+        margin-top: 0;
+      }
+
+      footer {
+        width: 50%;
+        width: 650px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+
+      footer > div {
+        width: 30%;
+      }
+
+      .footer1 {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .footer1 > p {
+        color: #e54c08;
+      }
+
+      .footer1_buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .button {
+        padding: 10px;
+        font-size: 1.3rem;
+        color: white;
+        background-color: #3c3b3b;
+        border: 0;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .spotify {
+        border-left: 1px solid #e54c08;
+        padding-left: 10px;
+      }
+
+      .footer2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer2 > img:nth-child(1) {
+        width: 46px;
+        height: 65px;
+      }
+
+      .footer2 > img:nth-child(2) {
+        width: 88px;
+        height: 31px;
+      }
+
+      /* .footer3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} */
+
+      .footer3 > p {
+        margin: 0;
+        font-size: 0.8rem;
+      }
+
+      .cc {
+        color: #e54c08;
+        padding: 0;
+        background-color: transparent;
+      }
+
+      @media (max-width: 704px) {
+        nav {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 10px 10px;
+        }
+
+        footer {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(3, 1fr);
+          gap: 20px 0;
+          justify-items: center;
+          width: auto;
+        }
+
+        .footer1 {
+          width: auto;
+        }
+
+        .footer3 {
+          width: 35%;
+        }
+      }
+
+      @media (max-width: 445px) {
+        .logo {
+          width: 250px;
+        }
+      }
+    </style>
     <title>Contactar</title>
   </head>
   <body>

@@ -50,7 +50,7 @@ form {
 
 @media (max-width: 640px) {
   form {
-    grid-template-columns: auto 300px;
+    grid-template-columns: 80px auto;
     grid-template-areas:
       'nom inputNom'
       'email inputEmail'
