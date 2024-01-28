@@ -1,5 +1,6 @@
 .contenedor-contactar {
-  margin-left: 100px;
+  /* margin-left: 100px; */
+  margin: 0 auto;
   width: 80%;
 }
 
@@ -12,7 +13,7 @@ h1 {
 }
 
 h1 ~ p {
-  width: 59%;
+  width: 100%;
   /* margin: 25px auto; */
 }
 
@@ -20,6 +21,7 @@ form {
   /*   width: 40%;
  */
   /* margin: 0 auto; */
+  width: auto;
   display: grid;
   grid-template-rows: 2fr 1fr 6fr 2fr;
   grid-template-columns: 150px 80px 300px;
@@ -44,4 +46,19 @@ form {
   color: white;
   border-radius: 15px;
   border: 0;
+}
+
+@media (max-width: 640px) {
+  form {
+    grid-template-columns: auto 300px;
+    grid-template-areas:
+      'nom inputNom'
+      'email inputEmail'
+      'consulta textarea'
+      'enviar enviar';
+  }
+
+  .enviar {
+    justify-self: center;
+  }
 }

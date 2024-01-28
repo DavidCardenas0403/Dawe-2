@@ -148,7 +148,7 @@ h2 {
       'cinco seis'
       'siete ocho';
     column-gap: 0;
-    width: auto;
+    width: 90%;
   }
 
   article > div {
