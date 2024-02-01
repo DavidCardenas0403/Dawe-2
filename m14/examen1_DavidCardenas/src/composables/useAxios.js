@@ -1,34 +1,32 @@
 import axios from "axios";
-export default async function useAxios () {
+import {ref} from "vue"
+export default function useAxios () {
+    const baseUrl = "https://analisi.transparenciacatalunya.cat/resource/2gws-ubmt.json"
+    const comarca = ref(null)
+    const comarques = ref([])
 
-    async function fetchAll(url) {
+    async function fetchAll() {
         let response
         try {
-            response = await axios.get(url)
-            if (response.succes) {
-                console.log(response)
-                return response
-            }
+            response = await axios.get(baseUrl)
+            comarques.value = response.data
+            console.log(comarques.value)
         } catch (e) {
             console.error(e)
-            return response
         }
     }
 
-    async function fetchOne(url, id) {
+    async function fetchOne(id) {
         let response
         try {
-            response = await axios.get(`${url}?codi_comarca=${id}`)
-            if (response.succes) {
-                console.log(response)
-                return response
-            }
+            response = await axios.get(`${baseUrl}?codi_comarca=${id}`)
+            console.log(response);
+            comarca.value = response.data
         } catch (e) {
             console.error(e)
-            return response
         }
     }
 
-    return {fetchAll, fetchOne}
+    return {fetchAll, comarques, fetchOne, comarca}
     
 }
