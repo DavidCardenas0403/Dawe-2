@@ -9,7 +9,7 @@ fetchOne(router.currentRoute.value.params.id[0]);
 </script>
 
 <template>
-  <h1>Detall consum</h1>
+  <h1>{{ comarca[0].comarca.split(",")[0] }}</h1>
   <AnyComarca v-for="(any, index) in comarca" :key="index" :infoAny="any" />
   <button @click="goToConsum">Tornar</button>
 </template>

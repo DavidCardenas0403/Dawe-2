@@ -4,7 +4,7 @@ import Menu from "./components/Menu.vue";
 </script>
 
 <template>
-  <Menu></Menu>
+  <Menu />
   <RouterView />
 </template>
 

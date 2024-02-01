@@ -10,12 +10,11 @@ fetchAll();
 <template>
   <h1>Comarques</h1>
   <ul>
-    <RouterLink
-      v-for="(comarca, index) in comarques"
-      :key="index"
-      :to="`/consum/${comarca.codi_comarca}`"
-      >{{ comarca.comarca.split(",")[0] }}</RouterLink
-    >
+    <li v-for="(comarca, index) in comarques" :key="index">
+      <RouterLink :to="`/consum/${comarca.codi_comarca}`">{{
+        comarca.comarca.split(",")[0]
+      }}</RouterLink>
+    </li>
   </ul>
 </template>
 

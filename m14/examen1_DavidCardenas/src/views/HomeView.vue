@@ -1,5 +1,6 @@
 <template>
   <main>
+    <h1>Home View</h1>
     <ul>
       <li>
         Desenvolupa aquest projecte Vue 3 amb composition api script setup. No
