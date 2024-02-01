@@ -1,4 +1,18 @@
 <script setup>
+/*
+-----------------------------------------
+import { useRouter } from "vue-router"; 
+const router = useRouter()
+router.back() --- PARA REDIRIGIR A LA RUTA ANTERIOR
+router.push({ --- PARA REDIRIGIR A OTRA RUTA MEDIANTE JS
+  path: "/detalle",
+  name: "detalle",
+  query: {nom: id.value}
+})
+----------------------------------------
+import router from "@/router" --- archivo js del router (index.js)
+
+*/
 import { ref } from "vue";
 import Searcher from "@/components/Searcher.vue";
 import Todo from "@/components/Todo.vue";

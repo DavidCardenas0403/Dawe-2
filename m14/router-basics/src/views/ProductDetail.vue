@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import router from "@/router";
 import productes from "../products/products.json";
-
 const producte = productes.filter(
   (prod) => prod.id === router.currentRoute.value.params?.id
 )[0];
