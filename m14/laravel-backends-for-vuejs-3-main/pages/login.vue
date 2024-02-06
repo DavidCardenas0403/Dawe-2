@@ -12,6 +12,9 @@ const login = async (form: LoginForm) => {
   let resLogin;
   try {
     resLogin = await axios.post("/login", form);
+    const userInfo = await axios.get("/user");
+    console.log(userInfo);
+    useRouter().push("/me");
   } catch (e) {
     console.error(`Ha ocurrido un error: ${e}`);
   }

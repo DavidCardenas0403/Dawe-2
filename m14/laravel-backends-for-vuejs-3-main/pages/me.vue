@@ -1,14 +1,22 @@
-<script>
-import axios from "axios";
-import { ref } from "vue";
+<template>
+  <p><strong>User Name:</strong> {{ name }}</p>
+  <p><strong>User Email:</strong> {{ email }}</p>
+</template>
 
-const userInfo = ref({ name: "", email: "" });
+<script setup>
+import axios from "axios";
+
+const name = ref("");
+const email = ref("");
 
 const getUserInfo = async () => {
   let resUserInfo;
   try {
     resUserInfo = await axios.get("/user");
-    userInfo.value = resUserInfo;
+    console.log(resUserInfo.data);
+    name.value = resUserInfo.data?.name;
+    email.value = resUserInfo.data?.email;
+    console.log(name.value, email.value);
   } catch (e) {
     console.log(`Ha ocurrido un error: ${e}`);
   }
@@ -17,7 +25,3 @@ const getUserInfo = async () => {
 
 getUserInfo();
 </script>
-<template>
-  <p><strong>User Name:</strong>{{ userInfo.name }}</p>
-  <p><strong>User Email:</strong>{{ userInfo.email }}</p>
-</template>

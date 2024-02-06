@@ -1,27 +1,28 @@
 <script setup lang="ts">
-import {ref, type Ref} from "vue"
-import type {RegisterForm} from "../types/RegisterForm"
-import axios from "axios"
+import { ref, type Ref } from "vue";
+import type { RegisterForm } from "../types/RegisterForm";
+import axios from "axios";
 
 definePageMeta({
   layout: "centered",
 });
 
-const form:Ref<RegisterForm> = ref<RegisterForm>({
-    name: "",
-    email:"",
-    password:"",
-    password_confirmation:""
-})
-const register = async (form:RegisterForm) => {
-  let responseRegister
+const form: Ref<RegisterForm> = ref<RegisterForm>({
+  name: "",
+  email: "",
+  password: "",
+  password_confirmation: "",
+});
+const register = async (form: RegisterForm) => {
+  let responseRegister;
   try {
-    responseRegister = await axios.post("/register", form)
+    responseRegister = await axios.post("/register", form);
+    useRouter().push("/login");
   } catch (e) {
-    console.error(`Ha ocurrido un error: ${e}`)
+    console.error(`Ha ocurrido un error: ${e}`);
   }
-  console.log(responseRegister)
-}
+  console.log(responseRegister);
+};
 </script>
 <template>
   <div class="register">
@@ -29,7 +30,7 @@ const register = async (form:RegisterForm) => {
     <form @submit.prevent="() => register(form)">
       <label>
         <div>Name</div>
-        <input v-model="form.name" type="text"  required/>
+        <input v-model="form.name" type="text" required />
       </label>
 
       <label>

@@ -20,6 +20,7 @@
     "axios": "^1.2.3",
     "laravel-vue-pagination": "^4.0.0",
     "nanoid": "^4.0.0",
-    "query-string": "^8.1.0"
+    "query-string": "^8.1.0",
+    "vue-router": "^4.2.5"
   }
 }
