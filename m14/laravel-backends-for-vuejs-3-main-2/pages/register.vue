@@ -3,6 +3,8 @@ import { ref, type Ref } from "vue";
 import type { RegisterForm } from "../types/RegisterForm";
 import axios from "axios";
 
+const { register } = useAuth();
+
 definePageMeta({
   middleware: ["guest"],
   layout: "centered",
@@ -14,7 +16,8 @@ const form: Ref<RegisterForm> = ref<RegisterForm>({
   password: "",
   password_confirmation: "",
 });
-const register = async (form: RegisterForm) => {
+
+const register2 = async (form: RegisterForm) => {
   let responseRegister;
   try {
     responseRegister = await axios.post("/register", form);
@@ -25,6 +28,7 @@ const register = async (form: RegisterForm) => {
   console.log(responseRegister);
 };
 </script>
+
 <template>
   <div class="register">
     <h1>Register</h1>

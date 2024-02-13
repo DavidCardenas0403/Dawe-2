@@ -3,12 +3,14 @@ import axios from "axios";
 import { ref, type Ref } from "vue";
 import type { LoginForm } from "../types/LoginForm";
 
+const { login } = useAuth();
+
 const form: Ref<LoginForm> = ref<LoginForm>({
   email: "",
   password: "",
 });
 
-const login = async (form: LoginForm) => {
+const login2 = async (form: LoginForm) => {
   let resLogin;
   try {
     resLogin = await axios.post("/login", form);
