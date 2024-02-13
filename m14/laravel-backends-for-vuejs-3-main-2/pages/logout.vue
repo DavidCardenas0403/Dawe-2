@@ -5,10 +5,7 @@
 <script setup>
 import axios from "axios";
 
-const logout = async () => {
-  await axios.post("/logout");
-  useRouter().replace("/login");
-};
+const { logout } = useAuth();
 
 logout();
 </script>

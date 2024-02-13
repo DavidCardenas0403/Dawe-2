@@ -1,12 +1,12 @@
-<template>
-  <p><strong>User Name:</strong> {{ name }}</p>
-  <p><strong>User Email:</strong> {{ email }}</p>
-</template>
-
 <script setup>
 import axios from "axios";
+definePageMeta({
+  middleware: ["auth"],
+});
 
-const name = ref("");
+const { user, initUser } = useAuth();
+
+/* const name = ref("");
 const email = ref("");
 
 const getUserInfo = async () => {
@@ -23,5 +23,10 @@ const getUserInfo = async () => {
   console.log(resUserInfo);
 };
 
-getUserInfo();
+getUserInfo(); */
+initUser();
 </script>
+<template>
+  <p><strong>User Name:</strong> {{ user.name }}</p>
+  <p><strong>User Email:</strong> {{ user.email }}</p>
+</template>
