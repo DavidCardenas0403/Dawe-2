@@ -1,10 +1,11 @@
 import axios from "axios";
 import { ref } from "vue";
-import type { LoginForm, RegisterForm, User } from "~~/types/index.ts";
+import type { LoginForm } from "~~/types/LoginForm";
+import type { RegisterForm } from "~~/types/RegisterForm";
 
 const user = ref<User | null>(null);
 
-/* interface User {
+interface User {
   id: number;
   name: string;
   email: string;
@@ -14,7 +15,7 @@ const user = ref<User | null>(null);
   created_at: Date | null;
   updated_at: Date | null;
 }
- */
+
 export const useAuth = () => {
   async function login(payload: LoginForm) {
     await axios.post("/login", payload);
