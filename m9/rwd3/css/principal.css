@@ -37,19 +37,19 @@ h5 {
 }
 
 h1 {
-  font-size: 5.5rem;
+  font-size: 3rem;
   font-family: "georgia", serif;
   font-weight: normal;
 }
 
 h2 {
-  font-size: 180%;
+  font-size: 1.2rem;
   font-family: "georgia", serif;
   font-weight: normal;
 }
 
 h3 {
-  font-size: 120%;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -161,8 +161,13 @@ ol {
 
 #cabecera #buscador input {
   height: 2.5rem;
-  font-size: 2rem;
+  font-size: 1rem;
   height: 100%;
+  width: 55%;
+}
+
+#cabecera #buscador .submit {
+  width: 20%;
 }
 
 #cabecera #buscador legend {
@@ -171,6 +176,9 @@ ol {
 
 #cabecera #buscador fieldset {
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ---- Men� --------------------------------------------------------------- */
@@ -180,7 +188,7 @@ ol {
   width: calc(100% - 1.27%);
   margin: 0 auto;
   padding: 10px 0 0 0;
-  height: 150px;
+  min-height: 150px;
   padding: 20px 0;
 }
 
@@ -189,6 +197,7 @@ ol {
   padding: 0;
   list-style: none;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
   gap: 5px;
@@ -202,7 +211,8 @@ ol {
   padding: 0;
   /* float: left; */
   /* height: 3rem; */
-  font-size: 2rem;
+  font-size: 1.2rem;
+  width: 100%;
 }
 
 #menu ul li a {
@@ -222,7 +232,7 @@ ol {
   justify-content: center;
   align-items: center;
   height: 3rem;
-  width: calc(100vw / 6);
+  min-width: calc(100vw / 6);
 }
 
 #menu ul li a:hover {
@@ -250,7 +260,7 @@ ol {
     rgba(232, 237, 255, 1) 30%,
     rgba(255, 255, 255, 1) 100%
   );
-  border-radius: 15px;
+  border-radius: 15px 0 0 0;
 }
 
 #contenido .articulo img {
@@ -296,11 +306,11 @@ ol {
 #contenido .info span.autor,
 #contenido .info span.comentarios {
   padding-left: 5px;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
 }
 
 .info .icono {
-  width: 20px !important;
+  width: 15px !important;
 }
 
 /* #contenido .info span.fecha {
@@ -361,23 +371,22 @@ ol {
   display: block;
   padding: 3px 0 3px 40px;
   background: url("../imagenes/icono_elemento.gif") 8px no-repeat;
-  background-size: 20px;
-  background-color: #e0e8fa;
+  background-size: 15px;
+  background-color: #cedbf9;
   text-decoration: none;
-}
-
-#contenido #secundario li a:hover {
-  background-color: #e0e8fa;
-  color: #192666;
 }
 
 #contenido #secundario li.seleccionado a {
   background: #e0e8fa url("../imagenes/icono_elemento_seleccionado.gif") 8px
     no-repeat;
-  background-size: 20px;
+  background-size: 15px;
   font-weight: bold;
 }
 
+#contenido #secundario li a:hover {
+  background-color: #e0e8fa !important;
+  color: #192666;
+}
 /* ---- Pie ---------------------------------------------------------------- */
 #pie p {
   margin: 0;
@@ -389,12 +398,12 @@ ol {
 
 .footer {
   padding: 20px;
-  height: 60px;
+  height: 30px;
   color: #6685cc;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
 }
 
 .footer-blue {
@@ -402,4 +411,16 @@ ol {
   height: 100%;
   background-color: #cedcf9;
   border-radius: 0 0 25px 0;
+}
+
+@media screen and (min-width: 920px) {
+  #contenido #principal {
+    float: left;
+    width: 75%;
+  }
+
+  #contenido #secundario {
+    float: left;
+    width: 25%;
+  }
 }
