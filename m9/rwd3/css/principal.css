@@ -46,6 +46,8 @@ h2 {
   font-size: 1.2rem;
   font-family: "georgia", serif;
   font-weight: normal;
+  margin: 0 -20px;
+  padding: 10px;
 }
 
 h3 {
@@ -117,6 +119,7 @@ ol {
   padding: 0;
   background: #cedbf9 url("../imagenes/fondo_columna.gif") no-repeat;
   background: #cad8f8;
+  border-radius: 15px;
 }
 
 #pie {
@@ -404,6 +407,11 @@ ol {
   align-items: center;
   justify-content: space-between;
   font-size: 0.8rem;
+  background: #fff;
+  width: calc(100% - 1.27% - 40px);
+  margin: 0 auto;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 13px 14px 21px -8px rgba(181, 181, 181, 1);
 }
 
 .footer-blue {
@@ -413,14 +421,79 @@ ol {
   border-radius: 0 0 25px 0;
 }
 
-@media screen and (min-width: 920px) {
+@media (min-width: 920px) {
+  #cabecera {
+    height: 150px;
+  }
+
+  #cabecera .flex-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #contenido {
+    background: #fff;
+  }
+
   #contenido #principal {
     float: left;
-    width: 75%;
+    width: calc(75% - 15px);
+    padding-left: 15px;
   }
 
   #contenido #secundario {
     float: left;
+    width: calc(25% - 15px);
+    border-radius: 0 15px 0 0;
+  }
+
+  #secundario h3:first-child {
+    border-radius: 0;
+  }
+
+  #contenido #secundario #sobremi img {
     width: 25%;
+  }
+
+  #menu {
+    height: auto;
+    min-height: auto;
+  }
+
+  #menu ul {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 20px);
+    padding-left: 20px;
+  }
+
+  #menu ul li {
+    width: auto;
+    font-size: 1rem;
+  }
+
+  #menu ul li a {
+    height: auto;
+    min-width: 80px;
+    padding: 5px;
+  }
+
+  #contenido .info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .footer {
+    height: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #contenedor {
+    width: 80vw;
+    margin: 50px auto;
   }
 }
