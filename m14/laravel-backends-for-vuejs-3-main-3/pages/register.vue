@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref, type Ref } from "vue";
 import type { RegisterForm } from "../types/RegisterForm";
-import axios from "axios";
+import type { FormKitNode } from "@formkit/core";
+import axios, { AxiosError } from "axios";
+import { handleInvalidForm } from "~~/utils";
 
 const { register } = useAuth();
 
@@ -17,7 +19,7 @@ const form: Ref<RegisterForm> = ref<RegisterForm>({
   password_confirmation: "",
 });
 
-const register2 = async (form: RegisterForm) => {
+/* const register2 = async (form: RegisterForm) => {
   let responseRegister;
   try {
     responseRegister = await axios.post("/register", form);
@@ -26,13 +28,31 @@ const register2 = async (form: RegisterForm) => {
     console.error(`Ha ocurrido un error: ${e}`);
   }
   console.log(responseRegister);
-};
+}; */
+
+async function handleRegister(payload: RegisterForm, node?: FormKitNode) {
+  try {
+    await register(payload);
+  } catch (error) {
+    handleInvalidForm(error, node);
+  }
+}
 </script>
 
 <template>
   <div class="register">
     <h1>Register</h1>
-    <form @submit.prevent="() => register(form)">
+    <FormKit type="form" submit-label="Register" @submit="handleRegister">
+      <FormKit type="text" name="name" label="Name" />
+      <FormKit type="email" name="email" label="Email" />
+      <FormKit type="password" name="password" label="Password" />
+      <FormKit
+        type="password"
+        name="password_confirmation"
+        label="Confirm Password"
+      />
+    </FormKit>
+    <!--     <form @submit.prevent="() => register(form)">
       <label>
         <div>Name</div>
         <input v-model="form.name" type="text" required />
@@ -54,7 +74,7 @@ const register2 = async (form: RegisterForm) => {
       </label>
 
       <button type="submit" class="btn">Register</button>
-    </form>
+    </form> -->
 
     <p>
       Already have an account?

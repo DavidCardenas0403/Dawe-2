@@ -2,20 +2,22 @@
 import axios, { AxiosError } from "axios";
 import { ref, type Ref } from "vue";
 import type { LoginForm, ErrorResponse } from "../types/index";
+import type { FormKitNode } from "@formkit/core";
+import { handleInvalidForm } from "~~/utils";
 
 const { login } = useAuth();
 
-const form: Ref<LoginForm> = ref<LoginForm>({
+/* const form: Ref<LoginForm> = ref<LoginForm>({
   email: "",
   password: "",
-});
+}); */
 
 const errors = ref({
   email: [],
   password: [],
 });
 
-const login2 = async (form: LoginForm) => {
+/* const login2 = async (form: LoginForm) => {
   let resLogin;
   try {
     resLogin = await axios.post("/login", form);
@@ -32,7 +34,15 @@ const login2 = async (form: LoginForm) => {
     console.log(resLogin);
   }
   console.log(resLogin);
-};
+}; */
+
+async function handleLogin(payload: LoginForm, node?: FormKitNode) {
+  try {
+    await login(payload);
+  } catch (error) {
+    handleInvalidForm(error, node);
+  }
+}
 
 definePageMeta({
   middleware: ["guest"],
@@ -42,7 +52,11 @@ definePageMeta({
 <template>
   <div class="login">
     <h1>Login</h1>
-    <form @submit.prevent="() => login2(form)">
+    <FormKit type="form" submit-label="Login" @submit="handleLogin">
+      <FormKit label="Email" name="email" type="email" />
+      <FormKit label="Password" name="password" type="password" />
+    </FormKit>
+    <!--     <form @submit.prevent="() => login2(form)">
       <label>
         <div>Email</div>
         <input v-model="form.email" type="text" />
@@ -55,7 +69,7 @@ definePageMeta({
       </label>
       <div v-if="errors.password.length !== 0">{{ errors.password[0] }}</div>
       <button class="btn">Login</button>
-    </form>
+    </form> -->
 
     <p>
       Don't have an account?
