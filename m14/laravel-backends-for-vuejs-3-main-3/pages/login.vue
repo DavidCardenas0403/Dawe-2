@@ -1,13 +1,18 @@
 <script setup lang="ts">
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { ref, type Ref } from "vue";
-import type { LoginForm } from "../types/LoginForm";
+import type { LoginForm, ErrorResponse } from "../types/index";
 
 const { login } = useAuth();
 
 const form: Ref<LoginForm> = ref<LoginForm>({
   email: "",
   password: "",
+});
+
+const errors = ref({
+  email: [],
+  password: [],
 });
 
 const login2 = async (form: LoginForm) => {
@@ -17,8 +22,14 @@ const login2 = async (form: LoginForm) => {
     const userInfo = await axios.get("/user");
     console.log(userInfo);
     useRouter().push("/me");
-  } catch (e) {
-    console.error(`Ha ocurrido un error: ${e}`);
+  } catch (e: any) {
+    if (e instanceof AxiosError) {
+      errors.value.email = e.response?.data.errors.email;
+      errors.value.password = e.response?.data.errors.password;
+      console.log(e.response);
+      console.error(`Ha ocurrido un error: ${e}`);
+    }
+    console.log(resLogin);
   }
   console.log(resLogin);
 };
@@ -31,16 +42,18 @@ definePageMeta({
 <template>
   <div class="login">
     <h1>Login</h1>
-    <form @submit.prevent="() => login(form)">
+    <form @submit.prevent="() => login2(form)">
       <label>
         <div>Email</div>
         <input v-model="form.email" type="text" />
       </label>
+      <div v-if="errors.email.length !== 0">{{ errors.email[0] }}</div>
 
       <label>
         <div>Password</div>
         <input v-model="form.password" type="password" />
       </label>
+      <div v-if="errors.password.length !== 0">{{ errors.password[0] }}</div>
       <button class="btn">Login</button>
     </form>
 
