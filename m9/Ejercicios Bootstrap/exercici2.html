@@ -15,15 +15,26 @@
       crossorigin="anonymous"
     ></script>
     <style>
-      .height {
-        height: 500px;
-      }
       .row {
         margin: 0;
         padding: 0;
+        height: auto !important;
+        min-height: auto !important;
       }
       .row div {
-        height: 150px;
+        min-height: 150px;
+      }
+      .h-200 {
+        min-height: auto !important;
+        height: 250px !important;
+      }
+      .h-75 {
+        min-height: auto !important;
+        height: 75px !important;
+      }
+      .h-50 {
+        min-height: auto !important;
+        height: 50px !important;
       }
       .bg-pink {
         background-color: rgb(166, 21, 120);
@@ -32,24 +43,61 @@
     <title>Exercici 2</title>
   </head>
   <body>
-    <main class="container-fluid">
-      <div class="row">
-        <div class="bg-success border border-black col-12"></div>
+    <main class="container-fluid g-0">
+      <div class="row g-0">
+        <div class="bg-success border border-black col-12 h-75"></div>
       </div>
 
-      <div class="row">
-        <div
-          class="height bg-danger border border-black col-xs-12 col-sm-2"
-        ></div>
-        <div class="row col-xs-12 col-sm-10">
-          <div class="bg-pink border border-black col-12"></div>
-          <div
-            class="bg-warning border border-black col-xs-12 col-sm-12 col-md-6"
-          ></div>
-          <div
-            class="bg-warning border border-black col-xs-12 col-sm-12 col-md-6"
-          ></div>
+      <div class="row g-0">
+        <div class="bg-danger border border-black col-xs-12 col-sm-2"></div>
+        <div class="col-xs-12 col-sm-10">
+          <div class="row g-0">
+            <div class="bg-pink border border-black col-12 h-75"></div>
+          </div>
+          <div class="row g-0">
+            <div
+              class="bg-warning border border-black col-xs-12 col-sm-12 col-md-6 h-200"
+            ></div>
+            <div
+              class="bg-warning border border-black col-xs-12 col-sm-12 col-md-6 h-200"
+            ></div>
+          </div>
+          <div class="row g-0">
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-2"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-2"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-4"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-2"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-2"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-2"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-2"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-4"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-2"
+            ></div>
+            <div
+              class="bg-primary border border-black col-6 col-sm-4 col-md-2"
+            ></div>
+          </div>
         </div>
+      </div>
+      <div class="row g-0">
+        <div class="bg-success border border-black col-12 h-50"></div>
       </div>
 
       <!--       <div class="row">
