@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {FormKitNode} from "@formkit/core"
+import type { FormKitNode } from "@formkit/core";
 import axios from "axios";
 import { nanoid } from "nanoid";
 import { LoginForm } from "~~/types";
@@ -8,15 +8,18 @@ definePageMeta({
   middleware: ["auth"],
 });
 
-async function createLink(payload:LoginForm, node?: FormKitNode) {
+async function createLink(payload: LoginForm, node?: FormKitNode) {
   try {
+    console.log(payload);
+
     await axios.post("/links", {
-      ...payload, short_link: nanoid(8)
-    })
-    useRouter().replace("/links")
-  } catch (error) {    
-    handleInvalidForm(error, node)
-  } 
+      ...payload,
+      short_link: nanoid(8),
+    });
+    useRouter().replace("/links");
+  } catch (error) {
+    handleInvalidForm(error, node);
+  }
 }
 </script>
 <template>
