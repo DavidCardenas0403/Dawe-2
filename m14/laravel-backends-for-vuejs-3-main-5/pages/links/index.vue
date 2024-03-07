@@ -10,7 +10,7 @@ const data = ref<PaginateResponse<Link | null>>({});
 let links = computed(() => data.value?.data);
 //const links = ref<Array<Link>>([]);
 const page = ref(useRoute().query.page || 1);
-const searchFilter = ref("hola");
+const searchFilter = ref("");
 
 const getLinks = async () => {
   /* const linksResponse = await axios.get(`/links?page=${page.value}`); */
@@ -34,6 +34,7 @@ watch(page, async () => {
 });
 
 watch(searchFilter, async () => {
+  page.value = 1;
   await useRouter().replace(
     `/links?page=${page.value}&filter[full_link]=${searchFilter.value}`
   );
