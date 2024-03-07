@@ -10,19 +10,31 @@ const data = ref<PaginateResponse<Link | null>>({});
 let links = computed(() => data.value?.data);
 //const links = ref<Array<Link>>([]);
 const page = ref(useRoute().query.page || 1);
+const queries = ref({ page: 1, "filter[full_link]": "", ...useRoute().query });
 const searchFilter = ref("");
 
 const getLinks = async () => {
   /* const linksResponse = await axios.get(`/links?page=${page.value}`); */
-  const linksResponse = await axios.get(useRoute().fullPath);
-  console.log(linksResponse.data);
+  const qs = new URLSearchParams(queries.value).toString();
+  const { data: res } = await axios.get(`/links?${qs}`);
+  console.log(res.data);
 
-  data.value = linksResponse.data;
+  data.value = res;
+  /* data.value = res.data; */
   //links.value = linksResponse.data.data;
 };
 getLinks();
 
-watch(page, async () => {
+watch(
+  queries,
+  () => {
+    getLinks();
+    useRouter().push({ query: queries.value });
+  },
+  { deep: true }
+);
+
+/* watch(page, async () => {
   if (searchFilter.value !== "") {
     await useRouter().replace(
       `/links?page=${page.value}&filter[full_link]=${searchFilter.value}`
@@ -39,7 +51,7 @@ watch(searchFilter, async () => {
     `/links?page=${page.value}&filter[full_link]=${searchFilter.value}`
   );
   getLinks();
-});
+}); */
 
 /* const links = [
   {
@@ -67,10 +79,7 @@ watch(searchFilter, async () => {
     <nav class="flex justify-between mb-4 items-center">
       <h1 class="mb-0">My Links</h1>
       <div class="flex items-center">
-        <SearchInput
-          :modelValue="searchFilter"
-          @update:modelValue="(value:string) => (searchFilter = value)"
-        />
+        <SearchInput v-model="queries['filter[full_link]']" />
         <NuxtLink to="/links/create" class="ml-4">
           <IconPlusCircle class="inline" /> Create New
         </NuxtLink>
@@ -126,7 +135,7 @@ watch(searchFilter, async () => {
       </table>
       <TailwindPagination
         :data="data"
-        @pagination-change-page="page = $event"
+        @pagination-change-page="queries.page = $event"
       />
       <div class="mt-5 flex justify-center"></div>
     </div>
