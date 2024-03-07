@@ -6,13 +6,15 @@ definePageMeta({
   middleware: ["auth"],
 });
 
-const data = ref<PaginateResponse<Link | null>>();
+const data = ref<PaginateResponse<Link | null>>({});
 let links = computed(() => data.value?.data);
 //const links = ref<Array<Link>>([]);
 const page = ref(useRoute().query.page || 1);
+const searchFilter = ref("hola");
 
 const getLinks = async () => {
-  const linksResponse = await axios.get(`/links?page=${page.value}`);
+  /* const linksResponse = await axios.get(`/links?page=${page.value}`); */
+  const linksResponse = await axios.get(useRoute().fullPath);
   console.log(linksResponse.data);
 
   data.value = linksResponse.data;
@@ -20,8 +22,21 @@ const getLinks = async () => {
 };
 getLinks();
 
-watch(page, () => {
-  useRouter().replace(`/links?page=${page.value}`);
+watch(page, async () => {
+  if (searchFilter.value !== "") {
+    await useRouter().replace(
+      `/links?page=${page.value}&filter[full_link]=${searchFilter.value}`
+    );
+  } else {
+    await useRouter().replace(`/links?page=${page.value}`);
+  }
+  getLinks();
+});
+
+watch(searchFilter, async () => {
+  await useRouter().replace(
+    `/links?page=${page.value}&filter[full_link]=${searchFilter.value}`
+  );
   getLinks();
 });
 
@@ -51,7 +66,10 @@ watch(page, () => {
     <nav class="flex justify-between mb-4 items-center">
       <h1 class="mb-0">My Links</h1>
       <div class="flex items-center">
-        <SearchInput modelValue="" />
+        <SearchInput
+          :modelValue="searchFilter"
+          @update:modelValue="(value:string) => (searchFilter = value)"
+        />
         <NuxtLink to="/links/create" class="ml-4">
           <IconPlusCircle class="inline" /> Create New
         </NuxtLink>
