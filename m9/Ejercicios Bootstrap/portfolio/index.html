@@ -15,26 +15,50 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function handleNavbar() {
+        const navbar = document.getElementById('navbar')
+        const main = document.getElementById('main')
+
+        if (navbar.attributes['aria-expanded'] === 'true') {
+          main.style.height = 'calc(100vh - 192px)'
+          return
+        }
+
+        main.style.height = 'calc(100vh - 72px)'
+      }
+    </script>
     <!-- Intro settings -->
     <style>
-      /* Default height for small devices */
-      #intro-example {
-        height: 400px;
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Train+One&display=swap'); /* Default height for small devices */
+      * {
+        font-family: 'Raleway', sans-serif;
+      }
+      main {
+        background-image: url('programador.avif');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: calc(100vh - 72px);
       }
 
+      /*       #intro-example {
+        height: 400px;
+      } */
+
       /* Height for devices larger than 992px */
-      @media (min-width: 992px) {
+      /*       @media (min-width: 992px) {
         #intro-example {
           height: 600px;
         }
-      }
+      } */
     </style>
   </head>
-  <body>
+  <body class="position-relative">
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-info p-3">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">David Cárdenas</a>
+
           <button
             class="navbar-toggler"
             type="button"
@@ -43,6 +67,8 @@
             aria-controls="navbarNavDropdown"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            id="navbar"
+            onclick="handleNavbar()"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -129,7 +155,14 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main id="main">
+      <div class="p-4">
+        <h1 class="fw-bold fs-1 text-white">David Cárdenas</h1>
+        <p class="lead text-white">
+          I am 20 years old, I was born in Barcelona and I live in Hospitalet de
+          Llobregat.
+        </p>
+      </div>
       <!-- Modal -->
       <div
         class="modal fade"
@@ -149,7 +182,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">...</div>
+            <div class="modal-body text-center fw-bold">Spain</div>
             <div class="modal-footer">
               <button
                 type="button"
@@ -157,9 +190,6 @@
                 data-bs-dismiss="modal"
               >
                 Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
               </button>
             </div>
           </div>
@@ -185,7 +215,9 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">...</div>
+            <div class="modal-body text-center fw-bold">
+              Hospitalet de Llobregat, Barcelona
+            </div>
             <div class="modal-footer">
               <button
                 type="button"
@@ -193,9 +225,6 @@
                 data-bs-dismiss="modal"
               >
                 Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
               </button>
             </div>
           </div>
@@ -222,10 +251,10 @@
               ></button>
             </div>
             <div class="modal-body">
-              Hice la primaria y la ESO en el mismo instituto, hasta que empecé
-              el Bachillerato científico-tecnológico. Posteriormente, empecé
-              este ciclo superior, el cual he descubierto un mundo muy
-              apasionante.
+              I did primary and secondary school at the same institute, until I
+              started the Scientific-Technological Baccalaureate. Later, I
+              started this higher cycle, which I have discovered a very
+              thrilling world.
             </div>
             <div class="modal-footer">
               <button
@@ -235,13 +264,26 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
-              </button>
             </div>
           </div>
         </div>
       </div>
     </main>
+    <footer
+      class="text-center text-lg-start bg-info position-absolute bottom-0 left-0 w-100"
+    >
+      <div class="text-center text-white py-3 bg-primary">
+        © 2024 Copyright:
+        <a
+          class="text-white"
+          target="_blank"
+          href="https://github.com/DavidCardenas0403"
+          >David Cárdenas</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <!-- Copyright -->
   </body>
 </html>
