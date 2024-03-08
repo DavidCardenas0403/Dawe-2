@@ -17,25 +17,25 @@
     ></script>
     <script>
       function handleNavbar() {
-        const navbar = document.getElementById('navbar')
-        const main = document.getElementById('main')
+        const navbar = document.getElementById("navbar");
+        const main = document.getElementById("main");
 
-        if (navbar.attributes['aria-expanded'] === 'true') {
-          main.style.height = 'calc(100vh - 192px)'
-          return
+        if (navbar.attributes["aria-expanded"] === "true") {
+          main.style.height = "calc(100vh - 192px)";
+          return;
         }
 
-        main.style.height = 'calc(100vh - 72px)'
+        main.style.height = "calc(100vh - 72px)";
       }
     </script>
     <!-- Intro settings -->
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Train+One&display=swap'); /* Default height for small devices */
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Train+One&display=swap"); /* Default height for small devices */
       * {
-        font-family: 'Raleway', sans-serif;
+        font-family: "Raleway", sans-serif;
       }
       main {
-        background-image: url('programador.avif');
+        background-image: url("programador.avif");
         background-repeat: no-repeat;
         background-size: cover;
         height: calc(100vh - 72px);
@@ -76,12 +76,15 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link mx-2 active" aria-current="page" href="#"
+                <a
+                  class="nav-link mx-2 active"
+                  aria-current="page"
+                  href="./index.html"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-2" href="#">Skills</a>
+                <a class="nav-link mx-2" href="./skills.html">Skills</a>
               </li>
               <li class="nav-item dropdown">
                 <a
@@ -250,7 +253,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body fw-bold">
               I did primary and secondary school at the same institute, until I
               started the Scientific-Technological Baccalaureate. Later, I
               started this higher cycle, which I have discovered a very
