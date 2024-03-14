@@ -1,24 +1,27 @@
 <script setup lang="ts">
 import axios from "axios";
-import type { Link, PaginateResponse } from "~~/types";
+import type { Link, PaginatedResponse } from "../../types/index";
 import { TailwindPagination } from "laravel-vue-pagination";
+import { useLinks } from "~~/composables/useLinks";
 definePageMeta({
   middleware: ["auth"],
 });
 
-const data = ref<PaginateResponse<Link | null>>({});
-let links = computed(() => data.value?.data);
-//const links = ref<Array<Link>>([]);
-const page = ref(useRoute().query.page || 1);
 const queries = ref({
   page: 1,
   sort: "",
   "filter[full_link]": "",
   ...useRoute().query,
 });
-const searchFilter = ref("");
+const { data, index: getLinks } = useLinks({ queries });
+/* const data = ref<PaginatedResponse<Link | null>>({}); */
+await getLinks();
+let links = computed(() => data?.value?.data);
+//const links = ref<Array<Link>>([]);
+/* const page = ref(useRoute().query.page || 1);
+const searchFilter = ref(""); */
 
-const getLinks = async () => {
+const getLinks2 = async () => {
   /* const linksResponse = await axios.get(`/links?page=${page.value}`); */
   //@ts-expect-error page es un nombre i aií està bé
   const qs = new URLSearchParams(queries.value).toString();
@@ -29,12 +32,11 @@ const getLinks = async () => {
   /* data.value = res.data; */
   //links.value = linksResponse.data.data;
 };
-getLinks();
 
 watch(
   queries,
   () => {
-    getLinks();
+    //getLinks();
     useRouter().push({ query: queries.value });
   },
   { deep: true }
@@ -116,7 +118,7 @@ watch(searchFilter, async () => {
         </thead>
         <tbody>
           <tr v-for="link in links">
-            <td>
+            <td :title="`created ${useTimeAgo(link.created_at).value}`">
               <a :href="link.full_link" target="_blank">
                 {{ link.full_link.replace(/^http(s?):\/\//, "") }}</a
               >

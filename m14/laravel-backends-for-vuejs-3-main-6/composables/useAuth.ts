@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ref } from "vue";
-import type { LoginForm, RegisterForm, User } from "~~/types/index.ts";
+import type { LoginForm, RegisterForm, User } from "../types/index";
 
 const user = ref<User | null>(null);
 /* 
