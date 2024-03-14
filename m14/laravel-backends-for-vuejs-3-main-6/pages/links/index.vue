@@ -13,7 +13,7 @@ const queries = ref({
   "filter[full_link]": "",
   ...useRoute().query,
 });
-const { data, index: getLinks } = useLinks({ queries });
+const { data, index: getLinks, destroy } = useLinks({ queries });
 /* const data = ref<PaginatedResponse<Link | null>>({}); */
 await getLinks();
 let links = computed(() => data?.value?.data);
@@ -32,6 +32,13 @@ const getLinks2 = async () => {
   /* data.value = res.data; */
   //links.value = linksResponse.data.data;
 };
+
+async function handleDelete(id: number) {
+  await destroy(id);
+  if (data.value) {
+    data.value.data = data.value?.data.filter((link) => link.id != id);
+  }
+}
 
 watch(
   queries,
@@ -143,7 +150,7 @@ watch(searchFilter, async () => {
               /></NuxtLink>
             </td>
             <td>
-              <button><IconTrash /></button>
+              <button @click="handleDelete(link.id)"><IconTrash /></button>
             </td>
             <td></td>
           </tr>
