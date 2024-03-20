@@ -1,0 +1,17 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.bg-purple {
+    background-color: blueviolet;
+}
