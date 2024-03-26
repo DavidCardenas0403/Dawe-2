@@ -15,11 +15,11 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="style.css" />
-    <title>RSound</title>
+    <link rel="stylesheet" href="custom.css" />
+    <title>Resound</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-purple">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
       <div class="container-fluid">
         <img class="navbar-brand logo" src="RSound.jpeg" />
 
@@ -118,11 +118,11 @@
               ></a>
             </li>
           </ul>
-          <form class="d-flex me-3">
+          <form class="d-flex ms-05rem">
             <input
               class="form-control me-2"
               type="search"
-              placeholder="Search"
+              placeholder="Buscar"
               aria-label="Search"
             />
             <button class="btn btn-danger" type="submit">
@@ -142,5 +142,82 @@
         </div>
       </div>
     </nav>
+    <main>
+      <h1 class="text-center mt-3 display-4 mx-3">
+        <strong class="text-muted">Resound</strong><br />
+        tu tienda de música de confianza
+      </h1>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide d-none d-sm-block"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./RSound.jpeg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./RSound.jpeg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./RSound.jpeg" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </main>
+    <footer
+      class="text-center text-lg-start position-fixed bottom-0 left-0 w-100"
+    >
+      <div class="text-center text-white py-3 bg-purple">
+        © 2024 Copyright:
+        <a
+          class="text-white"
+          target="_blank"
+          href="https://github.com/DavidCardenas0403"
+          >David Cárdenas</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
   </body>
 </html>

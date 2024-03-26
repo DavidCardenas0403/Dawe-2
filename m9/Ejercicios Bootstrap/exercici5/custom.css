@@ -1,0 +1,50 @@
+.logo {
+  width: 100px;
+  height: 100px;
+  padding: 0;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.bg-purple {
+  background-color: blueviolet;
+}
+
+.ms-05rem {
+  margin: 0 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.form-control {
+  max-width: 250px;
+}
+
+.carousel {
+  width: 80%;
+  margin: 0 auto;
+  height: 600px !important;
+  border-radius: 15px;
+}
+
+.carousel-inner {
+  height: 600px !important;
+  border-radius: 15px;
+}
+
+.carousel-item {
+  height: 600px !important;
+  border-radius: 15px;
+}
+
+.carousel img {
+  object-fit: cover;
+  width: 100%;
+  height: 600px !important;
+}
