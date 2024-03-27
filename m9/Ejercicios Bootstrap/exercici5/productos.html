@@ -3,7 +3,469 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos</title>
+    <link rel="icon" type="image/x-icon" href="./RSound.jpeg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="custom.css" />
+    <title>Resound - Productos</title>
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
+      <div class="container-fluid">
+        <img class="navbar-brand logo" src="RSound.jpeg" />
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          id="navbar"
+          onclick="handleNavbar()"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link mx-2" aria-current="page" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link mx-2 active" href="./productos.html"
+                >Productos</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link mx-2 dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Information
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#country"
+                  >
+                    Country
+                  </button>
+                </li>
+
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#city"
+                  >
+                    City
+                  </button>
+                </li>
+                <!-- Button trigger modal -->
+
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item"
+                    data-bs-toggle="modal"
+                    data-bs-target="#biography"
+                  >
+                    Biography
+                  </button>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
+            <li class="nav-item mx-2">
+              <a class="nav-link text-dark h5" href="" target="blank"
+                ><i class="fab fa-google-plus-square"></i
+              ></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-dark h5" href="" target="blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-dark h5" href="" target="blank"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+            </li>
+          </ul>
+          <form class="d-flex ms-05rem">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search"
+            />
+            <button class="btn btn-danger" type="submit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m19.6 21l-6.3-6.3q-.75.6-1.725.95T9.5 16q-2.725 0-4.612-1.888T3 9.5q0-2.725 1.888-4.612T9.5 3q2.725 0 4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l6.3 6.3zM9.5 14q1.875 0 3.188-1.312T14 9.5q0-1.875-1.312-3.187T9.5 5Q7.625 5 6.313 6.313T5 9.5q0 1.875 1.313 3.188T9.5 14"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <main class="d-flex flex-column align-items-center">
+      <div class="d-flex align-items-center py-3 mx-3 gap-3">
+        <h1 class="text-center my-0 display-4">
+          <strong class="text-muted">Productos</strong>
+        </h1>
+        <a href="./comprar.html" class="btn btn-primary h-75 mt-1">
+          Compra ya
+        </a>
+      </div>
+
+      <ul class="nav nav-tabs mt-4 gap-2" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="guitarras-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#guitarras"
+            type="button"
+            role="tab"
+            aria-controls="guitarras"
+            aria-selected="true"
+          >
+            Guitarras
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="pianos-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#pianos"
+            type="button"
+            role="tab"
+            aria-controls="pianos"
+            aria-selected="false"
+          >
+            Pianos
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="baterias-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#baterias"
+            type="button"
+            role="tab"
+            aria-controls="baterias"
+            aria-selected="false"
+          >
+            Baterías
+          </button>
+        </li>
+      </ul>
+      <div
+        class="tab-content w-100 p-5 d-flex justify-content-center"
+        id="myTabContent"
+      >
+        <div
+          class="tab-pane fade show active"
+          id="guitarras"
+          role="tabpanel"
+          aria-labelledby="guitarras-tab"
+        >
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4"
+          >
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./guitarras/clasica.webp"
+                  class="card-img-top pt-1"
+                  alt="Imagen guitarra clásica"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">JOSE TORRES JTC-20S</h5>
+                  <p class="card-text text-justify pt-4">
+                    Guitarra clásica. Tapa maciza de cedro. Aros y fondo de
+                    caoba. Mástil de caoba. Diapasón de palosanto de la India.
+                    Cejuela de hueso 52mm. Clavijero plateado en niquel.
+                    Ribeteado de palosanto de India. Escala 650mm. Acabado mate.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./guitarras/electrica.jpg"
+                  class="card-img-top pt-2"
+                  alt="Imagen guitarra eléctrica"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">SIRE GUITARS S3 Tobacco</h5>
+                  <p class="card-text text-justify pt-4">
+                    'Guitarra eléctrica Larry Carlton tipo Strat. Cuerpo de
+                    caoba. Mástil de arce C-shape, acabado satinado. Diapasón de
+                    palisandro, con trastes redondeados para mayor comodidad.
+                    Escala: 648mm (25.5’’). Mástil atornillado (bolt-on).
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./guitarras/folk.webp"
+                  class="card-img-top pt-3"
+                  alt="Imagen guitarra clásica"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">YAMAHA F310 Folk Natural</h5>
+                  <p class="card-text text-justify pt-4">
+                    Yamaha F310 Folk Natural es una guitarra acústica con cuerpo
+                    tradicional estilo ''western'' y diseño que brinda mayor
+                    confort.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./guitarras/ukelele.jpg"
+                  class="card-img-top pt-3"
+                  alt="Imagen ukelele"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">KALA MKTE Tenor EQ Makala</h5>
+                  <p class="card-text pt-4">
+                    Ukelele KALA Tenor EQ MAKALA. Con EQ Pasivo PS-900 Diapasón
+                    y puente de palisandro. Clavijero de engranajes. Mástil de
+                    caoba. Cuerpo de Agathis. Acabado Satinado.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="pianos"
+          role="tabpanel"
+          aria-labelledby="pianos-tab"
+        >
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4"
+          >
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./pianos/acompañamiento.webp"
+                  class="card-img-top px-4"
+                  alt="Imagen piano de acompañamiento"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">CASIO CT-X700</h5>
+                  <p class="card-text text-justify mt-4">
+                    Con la revolucionaria tecnología de producción de sonido AiX
+                    y una variedad de nuevos ritmos y tonos, el CT-X700 es
+                    perfecto para iniciarse en el mundo de los teclados.
+                    Equipado con el nuevo controlador de ritmo Synchro Stop, la
+                    función Tap Tempo y el botón Registration Freeze, el CT-X700
+                    ofrece multitud de posibilidades.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./pianos/midi.webp"
+                  class="card-img-top mt-2 px-4"
+                  alt="Imagen teclado controlador MIDI"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">NOVATION LAUNCHKEY MINI MK3</h5>
+                  <p class="card-text text-justify mt-4">
+                    El controlador Launchkey Mini Mk3 Novation dispone de
+                    teclado MIDI, compuesto por 25 mini teclas. Es compacto y
+                    portátil para un fácil transporte.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./pianos/escenario.webp"
+                  class="card-img-top mt-3 px-4"
+                  alt="Imagen piano de escenario"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">NORD Stage 4 88</h5>
+                  <p class="card-text text-justify mt-4">
+                    El Nord Stage 4 presenta un nuevo diseño de panel con faders
+                    LED dedicados para cada capa, proporcionando una visión y
+                    flexibilidad excepcionales a la hora de crear sonidos y
+                    actuar en directo. La nueva biblioteca de Presets repleta de
+                    inspiradores sonidos de piano, sintetizador y órgano listos
+                    para usar, que permiten crear Patches de forma rápida y
+                    fluida.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./pianos/organo.jpg"
+                  class="card-img-top mt-3 px-4"
+                  alt="Imagen órgano eléctrico"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">YAMAHA YC61</h5>
+                  <p class="card-text mt-4">
+                    El Yamaha YC61 es un teclado de escenario enfocado en
+                    sonidos de órganos. Posee 61 teclas y gran personalización
+                    sonora.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="baterias"
+          role="tabpanel"
+          aria-labelledby="baterias-tab"
+        >
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4"
+          >
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./baterias/acustica.webp"
+                  class="card-img-top pt-4"
+                  alt="Imagen batería acústica"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    TAMA MA42TZUS-FBK Starclassic Maple
+                  </h5>
+                  <p class="card-text text-justify pt-4">
+                    Tama Ma42Tzus-Fbk Starclassic Maple es un set de batería
+                    acústica de 4 piezas, diseñado para bateristas que buscan un
+                    sonido de alta calidad.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./baterias/electronica.webp"
+                  class="card-img-top pt-4"
+                  alt="Imagen batería electrónica"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">YAMAHA DTX-432K</h5>
+                  <p class="card-text text-justify pt-4">
+                    El set de batería electrónica Yamaha Dtx-432K cuenta con
+                    excelente diseño y calidad de sonido. Incluye función de
+                    entrenamiento.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./baterias/set.webp"
+                  class="card-img-top pt-4"
+                  alt="Imagen set batería acústica"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">OQAN QPA-10 STANDARD</h5>
+                  <p class="card-text text-justify pt-4">
+                    Batería en madera de álamo de 6 capas. Compuesta de bombo de
+                    22 x 16'', timbal base de 16 x16'', toms aéreos de 10 x 8''
+                    y 12 x 9'' y caja de 14 x 5,5''. Incluye platos hi hat y
+                    crash, soporte de plato, soporte de hi-hat, soporte de caja,
+                    sillín, pedal de bombo y un par de baquetas.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img
+                  src="./baterias/sample.jpg"
+                  class="card-img-top pt-4"
+                  alt="Imagen sample"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">ROLAND SPD-SX Pro</h5>
+                  <p class="card-text pt-4">
+                    El SPD-SX PRO es el pad de muestreo definitivo para los
+                    conciertos más exigentes. Aprovechando la tecnología
+                    avanzada de pads de sampling de sus predecesores, el
+                    SPD-SX-PRO cuenta con una serie de mejoras profesionales
+                    solicitadas y está diseñado para la vida en la carretera.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="text-center text-lg-start position-relative bottom-0 left-0 w-100"
+    >
+      <div class="text-center text-white py-3 bg-purple">
+        © 2024 Copyright:
+        <a
+          class="text-white"
+          target="_blank"
+          href="https://github.com/DavidCardenas0403"
+          >David Cárdenas</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </body>
 </html>

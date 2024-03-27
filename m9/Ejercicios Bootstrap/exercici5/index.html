@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="custom.css" />
-    <title>Resound</title>
+    <title>Resound - Home</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-purple">
@@ -142,14 +142,14 @@
         </div>
       </div>
     </nav>
-    <main>
-      <h1 class="text-center mt-3 display-4 mx-3">
+    <main class="d-flex flex-column justify-content-center">
+      <h1 class="text-center py-3 my-0 display-4 mx-3">
         <strong class="text-muted">Resound</strong><br />
         tu tienda de música de confianza
       </h1>
       <div
         id="carouselExampleIndicators"
-        class="carousel slide d-none d-sm-block"
+        class="carousel carousel-dark slide d-none d-sm-block"
         data-bs-ride="carousel"
       >
         <div class="carousel-indicators">
@@ -176,13 +176,25 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./RSound.jpeg" class="d-block w-100" alt="..." />
+            <img
+              src="./guitarras/guitarra.webp"
+              class="d-block w-100"
+              alt="Imagen de guitarra"
+            />
           </div>
           <div class="carousel-item">
-            <img src="./RSound.jpeg" class="d-block w-100" alt="..." />
+            <img
+              src="./pianos/piano.webp"
+              class="d-block w-100"
+              alt="Imagen de piano"
+            />
           </div>
           <div class="carousel-item">
-            <img src="./RSound.jpeg" class="d-block w-100" alt="..." />
+            <img
+              src="./baterias/bateria.webp"
+              class="d-block w-100"
+              alt="Imagen de trompeta"
+            />
           </div>
         </div>
         <button
@@ -204,9 +216,22 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <div class="d-block d-sm-none images mt-5">
+        <img
+          src="./guitarra.webp"
+          class="d-block w-100"
+          alt="Imagen de guitarra"
+        />
+        <img src="./piano.webp" class="d-block w-100" alt="Imagen de piano" />
+        <img
+          src="./trompeta.jpg"
+          class="d-block w-100"
+          alt="Imagen de trompeta"
+        />
+      </div>
     </main>
     <footer
-      class="text-center text-lg-start position-fixed bottom-0 left-0 w-100"
+      class="text-center text-lg-start position-relative bottom-0 left-0 w-100"
     >
       <div class="text-center text-white py-3 bg-purple">
         © 2024 Copyright:
