@@ -55,55 +55,10 @@
                 >Contacto</a
               >
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link mx-2 dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+            <li class="nav-item">
+              <a class="nav-link mx-2" href="./caracteristicas.html"
+                >Características</a
               >
-                Information
-              </a>
-              <ul
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item"
-                    data-bs-toggle="modal"
-                    data-bs-target="#country"
-                  >
-                    Country
-                  </button>
-                </li>
-
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item"
-                    data-bs-toggle="modal"
-                    data-bs-target="#city"
-                  >
-                    City
-                  </button>
-                </li>
-                <!-- Button trigger modal -->
-
-                <li>
-                  <button
-                    type="button"
-                    class="dropdown-item"
-                    data-bs-toggle="modal"
-                    data-bs-target="#biography"
-                  >
-                    Biography
-                  </button>
-                </li>
-              </ul>
             </li>
           </ul>
           <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
@@ -183,6 +138,7 @@
                   placeholder="Ingresa tu teléfono"
                   required
                   maxlength="9"
+                  minlength="9"
                 />
                 <label for="telefono">Teléfono</label>
               </div>
@@ -196,47 +152,27 @@
                 />
                 <label for="email">Email</label>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="instrumentos" class="form-label"
-                  >Instrumentos Musicales</label
-                >
-                <select class="form-select" id="instrumentos">
-                  <option value="piano">Piano</option>
-                  <option value="guitarra">Guitarra</option>
-                  <option value="batería">Batería</option>
-                  <!-- Agrega más opciones según sea necesario -->
-                </select>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="tarjeta" class="form-label"
-                  >Tarjeta de Crédito</label
-                >
+
+              <div class="col-12 mb-3 form-floating ps-0">
                 <input
                   type="text"
                   class="form-control"
-                  id="tarjeta"
-                  placeholder="Número de tarjeta"
+                  id="asunto"
+                  placeholder="Asunto"
+                  required
                 />
+                <label for="asunto">Asunto</label>
               </div>
-              <div class="col-md-3 mb-3">
-                <label for="caducidad" class="form-label"
-                  >Fecha de Caducidad</label
+              <div class="form-floating mb-3 ps-0">
+                <textarea
+                  class="form-control resize-none"
+                  placeholder="Escribe tu comentario..."
+                  id="comentario"
+                  style="height: 200px"
+                ></textarea>
+                <label for="comentario"
+                  >Escribe tu comentario... (Opcional)</label
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="caducidad"
-                  placeholder="MM/AA"
-                />
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="cvv" class="form-label">CVV</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cvv"
-                  placeholder="Código de seguridad"
-                />
               </div>
               <div class="col-md-12">
                 <button type="reset" class="btn btn-secondary me-2">
