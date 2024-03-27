@@ -99,3 +99,22 @@ footer {
   height: 180px;
   overflow: auto;
 }
+
+.form-control {
+  max-width: none;
+}
+
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.max-500 {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.max-900 {
+  max-width: 900px;
+  margin: 0 auto;
+}
