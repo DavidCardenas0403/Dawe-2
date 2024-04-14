@@ -71,9 +71,132 @@
         </div>
         <div class="track-art"></div>
         <a
-          class="track-name mx-3 text-center text link-offset-2 link-underline link-underline-opacity-0"
+          onclick="loadFicha()"
+          data-bs-toggle="modal"
+          data-bs-target="#ficha"
+          class="play-btn track-name mx-3 text-center text link-offset-2 link-underline link-underline-opacity-0"
           >Track Name</a
         >
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="ficha"
+          tabindex="-1"
+          aria-labelledby="fichaLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center" id="fichaLabel"></h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <ul
+                  class="nav nav-tabs justify-content-center"
+                  id="myTab"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="autor-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#autor"
+                      type="button"
+                      role="tab"
+                      aria-controls="autor"
+                      aria-selected="true"
+                    >
+                      Autor
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="genero-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#genero"
+                      type="button"
+                      role="tab"
+                      aria-controls="genero"
+                      aria-selected="false"
+                    >
+                      Género
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="fecha-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#fecha"
+                      type="button"
+                      role="tab"
+                      aria-controls="fecha"
+                      aria-selected="false"
+                    >
+                      Fecha
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="letra-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#letra"
+                      type="button"
+                      role="tab"
+                      aria-controls="letra"
+                      aria-selected="false"
+                    >
+                      Letra
+                    </button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                  <div
+                    class="mt-3 text-center tab-pane fade show active"
+                    id="autor"
+                    role="tabpanel"
+                    aria-labelledby="autor-tab"
+                  >
+                    Autor
+                  </div>
+                  <div
+                    class="mt-3 text-center tab-pane fade"
+                    id="genero"
+                    role="tabpanel"
+                    aria-labelledby="genero-tab"
+                  >
+                    Género
+                  </div>
+                  <div
+                    class="mt-3 text-center tab-pane fade"
+                    id="fecha"
+                    role="tabpanel"
+                    aria-labelledby="fecha-tab"
+                  >
+                    Fecha
+                  </div>
+                  <div
+                    class="mt-3 text-justify tab-pane fade"
+                    id="letra"
+                    role="tabpanel"
+                    aria-labelledby="letra-tab"
+                  >
+                    Letra
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="track-artist text-center">Track Artist</div>
       </section>
       <!-- Define the section for displaying track buttons -->
